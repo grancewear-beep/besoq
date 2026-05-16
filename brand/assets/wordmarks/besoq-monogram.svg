@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  besoq — monogram
+  v1.0
+  
+  bsq, lowercase. Used only when full wordmark cannot be applied
+  (hardware, leather embossing, lining jacquards, favicons).
+  Reference: brand/03-visual/01-logo-system.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 240 160"
+     role="img"
+     aria-label="bsq">
+  <title>bsq</title>
+  <desc>besoq monogram (bsq), used as a utility mark only</desc>
+  <text x="120" y="100"
+        text-anchor="middle"
+        font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="80"
+        font-weight="400"
+        letter-spacing="9.6"
+        fill="#1A1A1A">bsq</text>
+</svg>

@@ -1,0 +1,44 @@
+/*
+ * besoq — motion tokens
+ * v1.0
+ *
+ * Reference: brand/03-visual/08-motion.md
+ *
+ * Motion is allowed only when it serves navigation. Maximum 240ms.
+ * Single-property only. Always honours prefers-reduced-motion.
+ */
+
+:root {
+  /* ─── Easings ─── */
+  --besoq-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --besoq-ease-linear: linear;
+
+  /* ─── Durations ─── */
+  --besoq-duration-instant: 0ms;
+  --besoq-duration-fast:    120ms;
+  --besoq-duration-base:    160ms;
+  --besoq-duration-slow:    200ms;
+  --besoq-duration-loop:    1200ms;  /* skeleton loops only */
+
+  /* ─── Composed transitions ─── */
+  --besoq-transition-opacity: opacity var(--besoq-duration-base) var(--besoq-ease-out);
+  --besoq-transition-color:   color var(--besoq-duration-base) var(--besoq-ease-out);
+  --besoq-transition-all:     opacity var(--besoq-duration-base) var(--besoq-ease-out),
+                              color var(--besoq-duration-base) var(--besoq-ease-out);
+}
+
+/*
+ * Reduced-motion handler.
+ * Customers with prefers-reduced-motion: reduce see no animation.
+ * The site remains fully usable; transitions are simply removed.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration:  0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

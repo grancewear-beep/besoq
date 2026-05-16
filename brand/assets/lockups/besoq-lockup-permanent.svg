@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  besoq — lockup, permanent line
+  v1.0
+  
+  The wordmark and line name share the same type, weight, and size.
+  Em dash with single space on each side (rendered as a typographic em dash).
+  
+  Reference: brand/01-strategy/07-brand-architecture.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 800 160"
+     role="img"
+     aria-label="besoq — permanent">
+  <title>besoq — permanent</title>
+  <desc>lockup of the besoq wordmark with the permanent line identifier</desc>
+  <text x="400" y="100"
+        text-anchor="middle"
+        font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="48"
+        font-weight="400"
+        letter-spacing="5.76"
+        fill="#1A1A1A">besoq — permanent</text>
+</svg>

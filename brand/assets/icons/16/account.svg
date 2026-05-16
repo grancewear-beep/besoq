@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-label="account" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter">
+  <title>account</title>
+  <circle cx="8" cy="6" r="2.5"/>
+  <path d="M3 13.5c0-2.5 2.24-4 5-4s5 1.5 5 4"/>
+</svg>

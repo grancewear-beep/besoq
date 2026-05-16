@@ -1,0 +1,189 @@
+/*
+ * besoq — typography tokens
+ * v1.0
+ *
+ * Reference: brand/03-visual/03-typography.md
+ *
+ * The system is two-faced (sans + serif) plus a mono for technical contexts.
+ * Söhne and Times Now are commercial; Inter and Source Serif 4 are the
+ * open-source fallbacks deployed where licensing is not yet in place.
+ */
+
+:root {
+  /* ─── Type families ─── */
+  --besoq-font-sans:
+    "Söhne",
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  --besoq-font-serif:
+    "Times Now",
+    "Source Serif 4",
+    "Source Serif Pro",
+    Georgia,
+    "Times New Roman",
+    Times,
+    serif;
+
+  --besoq-font-mono:
+    "Söhne Mono",
+    "JetBrains Mono",
+    ui-monospace,
+    SFMono-Regular,
+    "SF Mono",
+    Menlo,
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  /* ─── Type weights ─── */
+  --besoq-font-weight-light:    300;  /* serif large headlines only */
+  --besoq-font-weight-regular:  400;  /* default for sans + serif */
+  --besoq-font-weight-medium:   500;  /* not used; reserved */
+  --besoq-font-weight-semibold: 600;  /* sans, UI labels only */
+
+  /* ─── Type sizes (modular scale, ratio 1.25, anchored at 16) ─── */
+  --besoq-font-size-3xs:  11px;
+  --besoq-font-size-2xs:  12px;
+  --besoq-font-size-xs:   13px;
+  --besoq-font-size-sm:   14px;
+  --besoq-font-size-base: 16px;
+  --besoq-font-size-md:   18px;
+  --besoq-font-size-lg:   22px;
+  --besoq-font-size-xl:   28px;
+  --besoq-font-size-2xl:  36px;
+  --besoq-font-size-3xl:  48px;
+  --besoq-font-size-4xl:  64px;
+  --besoq-font-size-5xl:  84px;
+
+  /* ─── Line heights ─── */
+  --besoq-line-height-display:   1.00;  /* single-word display */
+  --besoq-line-height-tight:     1.10;  /* 32px+ headlines */
+  --besoq-line-height-snug:      1.35;  /* small UI labels */
+  --besoq-line-height-normal:    1.55;  /* default sans body */
+  --besoq-line-height-serif:     1.65;  /* default serif body */
+  --besoq-line-height-editorial: 1.75;  /* long-form journal */
+
+  /* ─── Letter spacing ─── */
+  --besoq-letter-spacing-0:         0;        /* default body */
+  --besoq-letter-spacing-caps:      0.05em;   /* small caps labels */
+  --besoq-letter-spacing-wordmark:  0.12em;   /* lowercase wordmark */
+  --besoq-letter-spacing-editorial: 0.20em;   /* uppercase wordmark */
+
+  /* ─── Compositional tokens ─── */
+  --besoq-paragraph-spacing: 1em;     /* paragraphs separated by space, never indent */
+  --besoq-max-line-length:   72ch;    /* maximum readable line */
+  --besoq-min-line-length:   45ch;    /* minimum acceptable */
+}
+
+/*
+ * Default body styles. Applied at the document root.
+ * Product code may override individual properties but should
+ * not redefine the family or default size.
+ */
+html {
+  font-family: var(--besoq-font-sans);
+  font-size:   var(--besoq-font-size-base);
+  font-weight: var(--besoq-font-weight-regular);
+  line-height: var(--besoq-line-height-normal);
+  letter-spacing: var(--besoq-letter-spacing-0);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+/*
+ * The wordmark — explicitly tokened so any product surface
+ * rendering "besoq" inline (a footer, an email, a landing)
+ * picks up the canonical letter-spacing without ad-hoc CSS.
+ */
+.besoq-wordmark {
+  font-family: var(--besoq-font-sans);
+  font-weight: var(--besoq-font-weight-regular);
+  letter-spacing: var(--besoq-letter-spacing-wordmark);
+  text-transform: lowercase;
+}
+
+.besoq-wordmark--editorial {
+  letter-spacing: var(--besoq-letter-spacing-editorial);
+  text-transform: uppercase;
+}
+
+/*
+ * Semantic typographic patterns. These exist as utility classes
+ * so the system can be applied consistently in HTML without
+ * everyone writing their own type rules.
+ */
+.besoq-text-eyebrow {
+  font-family: var(--besoq-font-sans);
+  font-size: var(--besoq-font-size-xs);
+  font-weight: var(--besoq-font-weight-regular);
+  letter-spacing: var(--besoq-letter-spacing-caps);
+  text-transform: lowercase;
+  color: var(--besoq-text-tertiary);
+}
+
+.besoq-text-headline {
+  font-family: var(--besoq-font-serif);
+  font-weight: var(--besoq-font-weight-light);
+  font-size: var(--besoq-font-size-3xl);
+  line-height: var(--besoq-line-height-tight);
+  letter-spacing: var(--besoq-letter-spacing-0);
+}
+
+.besoq-text-subhead {
+  font-family: var(--besoq-font-sans);
+  font-weight: var(--besoq-font-weight-regular);
+  font-size: var(--besoq-font-size-lg);
+  line-height: var(--besoq-line-height-snug);
+}
+
+.besoq-text-body {
+  font-family: var(--besoq-font-sans);
+  font-weight: var(--besoq-font-weight-regular);
+  font-size: var(--besoq-font-size-base);
+  line-height: var(--besoq-line-height-normal);
+}
+
+.besoq-text-editorial {
+  font-family: var(--besoq-font-serif);
+  font-weight: var(--besoq-font-weight-regular);
+  font-size: var(--besoq-font-size-md);
+  line-height: var(--besoq-line-height-editorial);
+}
+
+.besoq-text-spec {
+  font-family: var(--besoq-font-mono);
+  font-weight: var(--besoq-font-weight-regular);
+  font-size: var(--besoq-font-size-sm);
+  line-height: var(--besoq-line-height-normal);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.besoq-text-caption {
+  font-family: var(--besoq-font-sans);
+  font-weight: var(--besoq-font-weight-regular);
+  font-size: var(--besoq-font-size-xs);
+  line-height: var(--besoq-line-height-snug);
+  color: var(--besoq-text-tertiary);
+}
+
+/*
+ * Numerals — body uses proportional old-style by default,
+ * tables and prices switch to tabular lining via the
+ * .besoq-num-tabular helper.
+ */
+body {
+  font-variant-numeric: oldstyle-nums proportional-nums;
+}
+
+.besoq-num-tabular {
+  font-variant-numeric: tabular-nums lining-nums;
+}
