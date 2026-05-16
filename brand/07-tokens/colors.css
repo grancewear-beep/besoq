@@ -1,0 +1,78 @@
+/*
+ * besoq — colour tokens
+ * v1.0
+ *
+ * Reference: brand/03-visual/02-color-system.md
+ *
+ * The brand never uses pure white (#FFFFFF) or pure black (#000000).
+ * Bone is the white. Ash is the black.
+ */
+
+:root {
+  /* ─── Primary palette ─── */
+  --besoq-color-bone:      #F4EFE6;  /* primary background */
+  --besoq-color-ash:       #1A1A1A;  /* primary foreground */
+  --besoq-color-stone:     #A89B8C;  /* warm taupe */
+  --besoq-color-sage:      #9CA38F;  /* muted green */
+  --besoq-color-charcoal:  #3C3C3C;  /* mid-deep warm gray */
+
+  /* ─── Accent palette ─── */
+  --besoq-color-linen:     #E4DDCE;  /* deeper bone, panels */
+  --besoq-color-clay:      #B89F86;  /* warm beige, autumn */
+  --besoq-color-ink:       #11110F;  /* near-black, foiling */
+
+  /* ─── Warm neutral ramp ─── */
+  --besoq-color-neutral-50:   #FAF7F0;
+  --besoq-color-neutral-100:  #F4EFE6;  /* = bone */
+  --besoq-color-neutral-200:  #E4DDCE;  /* = linen */
+  --besoq-color-neutral-300:  #CFC6B4;
+  --besoq-color-neutral-400:  #A89B8C;  /* = stone */
+  --besoq-color-neutral-500:  #7A7163;
+  --besoq-color-neutral-600:  #564F44;
+  --besoq-color-neutral-700:  #3C3C3C;  /* = charcoal */
+  --besoq-color-neutral-900:  #1A1A1A;  /* = ash */
+
+  /* ─── Functional / state colours (UI only) ─── */
+  --besoq-color-state-success: #5C6B53;  /* quiet green */
+  --besoq-color-state-warning: #A48852;  /* quiet ochre */
+  --besoq-color-state-error:   #8C4A3F;  /* quiet red */
+
+  /* ─── Semantic surface tokens ─── */
+  --besoq-surface-background:           var(--besoq-color-bone);
+  --besoq-surface-background-elevated:  var(--besoq-color-neutral-50);
+  --besoq-surface-panel:                var(--besoq-color-linen);
+  --besoq-surface-divider:              var(--besoq-color-neutral-300);
+
+  --besoq-text-primary:    var(--besoq-color-ash);
+  --besoq-text-secondary:  var(--besoq-color-charcoal);
+  --besoq-text-tertiary:   var(--besoq-color-stone);
+  --besoq-text-quiet:      var(--besoq-color-neutral-500);
+  --besoq-text-on-dark:    var(--besoq-color-bone);
+
+  --besoq-border-default:  var(--besoq-color-neutral-300);
+  --besoq-border-strong:   var(--besoq-color-charcoal);
+  --besoq-border-focus:    var(--besoq-color-ash);
+}
+
+/*
+ * Dark surface variant — used only on a small number of surfaces:
+ * - The cart drawer at night-mode (optional)
+ * - Studio signage (digital displays)
+ * The brand does not ship a full dark mode for the website.
+ */
+[data-besoq-theme="dark"] {
+  --besoq-surface-background:           var(--besoq-color-ash);
+  --besoq-surface-background-elevated:  var(--besoq-color-charcoal);
+  --besoq-surface-panel:                var(--besoq-color-ink);
+  --besoq-surface-divider:              var(--besoq-color-neutral-600);
+
+  --besoq-text-primary:    var(--besoq-color-bone);
+  --besoq-text-secondary:  var(--besoq-color-neutral-200);
+  --besoq-text-tertiary:   var(--besoq-color-stone);
+  --besoq-text-quiet:      var(--besoq-color-neutral-400);
+  --besoq-text-on-dark:    var(--besoq-color-bone);
+
+  --besoq-border-default:  var(--besoq-color-neutral-600);
+  --besoq-border-strong:   var(--besoq-color-bone);
+  --besoq-border-focus:    var(--besoq-color-bone);
+}

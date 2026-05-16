@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  besoq — bsq jacquard pattern
+  v1.0
+  
+  The monogram repeated in a precisely-spaced grid, used as a tonal
+  jacquard for garment linings and the inside of leather goods.
+  
+  Tile: 240 × 320. Monogram 80px tall on each row.
+  Repeat: every 240px horizontal, 320px vertical, with rows offset.
+  
+  Renders at any scale. The brand uses this as same-tone-on-tone
+  (bone-on-bone, ash-on-ash, stone-on-stone) — so the visible
+  contrast comes from finish, not colour. The default in this file
+  is a low-contrast stone-on-bone for reference; production use
+  reduces opacity further.
+  
+  Reference: brand/03-visual/07-illustration-and-pattern.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 720 640"
+     role="img"
+     aria-label="bsq jacquard pattern">
+  <title>bsq jacquard</title>
+  <desc>tonal monogram repeat for linings and leather interiors</desc>
+
+  <defs>
+    <pattern id="bsq" x="0" y="0" width="240" height="320" patternUnits="userSpaceOnUse">
+      <!-- Row 1, centred -->
+      <text x="120" y="120"
+            text-anchor="middle"
+            font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+            font-size="60"
+            font-weight="400"
+            letter-spacing="7.2"
+            fill="#A89B8C"
+            opacity="0.55">bsq</text>
+      <!-- Row 2, offset -->
+      <text x="0" y="280"
+            text-anchor="middle"
+            font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+            font-size="60"
+            font-weight="400"
+            letter-spacing="7.2"
+            fill="#A89B8C"
+            opacity="0.55">bsq</text>
+      <text x="240" y="280"
+            text-anchor="middle"
+            font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+            font-size="60"
+            font-weight="400"
+            letter-spacing="7.2"
+            fill="#A89B8C"
+            opacity="0.55">bsq</text>
+    </pattern>
+  </defs>
+
+  <rect width="720" height="640" fill="#F4EFE6"/>
+  <rect width="720" height="640" fill="url(#bsq)"/>
+</svg>

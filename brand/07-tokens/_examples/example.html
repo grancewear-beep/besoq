@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>besoq — design tokens example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    /*
+     * This example file is reference-only. It demonstrates the design
+     * tokens applied to a small page of typical brand surfaces.
+     *
+     * No production content lives here.
+     */
+    main {
+      padding-block: var(--besoq-space-9);
+    }
+
+    .stack > * + * {
+      margin-top: var(--besoq-space-5);
+    }
+
+    .palette-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: var(--besoq-space-3);
+    }
+
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      gap: var(--besoq-space-2);
+    }
+
+    .swatch__chip {
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--besoq-surface-divider);
+    }
+
+    .swatch__name {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-secondary);
+    }
+
+    .pdp {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--besoq-space-7);
+    }
+
+    @media (min-width: 1024px) {
+      .pdp {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+
+    .pdp__image {
+      aspect-ratio: 4 / 5;
+      background: var(--besoq-color-linen);
+    }
+
+    .pdp__spec dt {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-tertiary);
+      text-transform: lowercase;
+      letter-spacing: var(--besoq-letter-spacing-caps);
+      margin-top: var(--besoq-space-3);
+    }
+
+    .pdp__spec dd {
+      margin: 0;
+      font-family: var(--besoq-font-sans);
+      font-size: var(--besoq-font-size-base);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="besoq-container stack">
+
+    <header class="stack">
+      <p class="besoq-text-eyebrow">brand · design tokens · v1.0</p>
+      <h1 class="besoq-text-headline">design tokens — example</h1>
+      <p class="besoq-text-editorial">
+        a single page demonstrating the besoq token system applied to a
+        product page, a palette block, and a small set of typographic
+        patterns. for full documentation, see brand/07-tokens/readme.md.
+      </p>
+    </header>
+
+    <hr>
+
+    <section class="stack">
+      <h2 class="besoq-text-subhead">primary palette</h2>
+      <div class="palette-row">
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-bone)"></div>
+          <span class="swatch__name">bone — F4EFE6</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-ash)"></div>
+          <span class="swatch__name">ash — 1A1A1A</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-stone)"></div>
+          <span class="swatch__name">stone — A89B8C</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-sage)"></div>
+          <span class="swatch__name">sage — 9CA38F</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-charcoal)"></div>
+          <span class="swatch__name">charcoal — 3C3C3C</span>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="pdp">
+      <div class="pdp__image" aria-hidden="true"></div>
+
+      <div class="stack">
+        <p class="besoq-text-eyebrow">besoq — autumn 26</p>
+        <h2 class="besoq-text-headline">the long coat</h2>
+
+        <p class="besoq-text-editorial">
+          a 380 gsm pressed wool from biella, in stone. unlined for movement.
+          four buttons. no logo, inside or out.
+        </p>
+
+        <dl class="pdp__spec besoq-num-tabular">
+          <dt>cloth</dt>
+          <dd>380 gsm wool, 100%</dd>
+          <dt>mill</dt>
+          <dd>biella</dd>
+          <dt>make</dt>
+          <dd>portugal</dd>
+        </dl>
+
+        <button>add to bag — € 580</button>
+      </div>
+    </section>
+
+    <hr>
+
+    <footer class="stack">
+      <p class="besoq-text-caption">
+        we will repair this. for as long as you wear it. — besoq
+      </p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

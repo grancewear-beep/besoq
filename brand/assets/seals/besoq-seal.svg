@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  besoq — circular seal
+  v1.0
+  
+  Used for wax seals, presentation-box interior, certificates of repair.
+  Outer ring 0.5pt stroke (translated to 1u in this viewBox); wordmark
+  occupies ~60% of inner diameter.
+  
+  Reference: brand/03-visual/01-logo-system.md
+  
+  Note: never used as a logo replacement on garment labels, packaging,
+  or websites. Reserved for ceremonial / service surfaces.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 200 200"
+     role="img"
+     aria-label="besoq seal">
+  <title>besoq seal</title>
+  <desc>circular besoq seal, used for ceremonial and service surfaces</desc>
+
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="96"
+          fill="none"
+          stroke="#1A1A1A"
+          stroke-width="1"/>
+
+  <!-- Inner ring -->
+  <circle cx="100" cy="100" r="86"
+          fill="none"
+          stroke="#1A1A1A"
+          stroke-width="0.5"/>
+
+  <!-- Wordmark -->
+  <text x="100" y="110"
+        text-anchor="middle"
+        font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="28"
+        font-weight="400"
+        letter-spacing="3.36"
+        fill="#1A1A1A">besoq</text>
+</svg>

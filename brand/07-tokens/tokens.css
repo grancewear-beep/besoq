@@ -1,0 +1,13 @@
+/*
+ * besoq — design tokens (composite)
+ * v1.0
+ *
+ * Re-exports every token surface (colour, type, spacing, motion)
+ * for convenience. Most consumers should use index.css instead;
+ * this file exists for tooling that prefers a single declaration block.
+ */
+
+@import url("./colors.css");
+@import url("./typography.css");
+@import url("./spacing.css");
+@import url("./motion.css");

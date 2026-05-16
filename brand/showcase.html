@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>besoq — brand showcase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.svg">
+  <link rel="stylesheet" href="07-tokens/index.css">
+  <style>
+    /* ───────── showcase-only styles ───────── */
+    body {
+      padding-block: var(--besoq-space-9);
+    }
+
+    .stack > * + * {
+      margin-top: var(--besoq-space-5);
+    }
+
+    .stack-lg > * + * {
+      margin-top: var(--besoq-space-9);
+    }
+
+    section {
+      padding-block: var(--besoq-space-9);
+      border-top: 1px solid var(--besoq-surface-divider);
+    }
+
+    section:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .section-eyebrow {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      letter-spacing: var(--besoq-letter-spacing-caps);
+      color: var(--besoq-text-tertiary);
+      text-transform: lowercase;
+      margin-bottom: var(--besoq-space-5);
+    }
+
+    /* ── palette grid ── */
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: var(--besoq-space-3);
+    }
+
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      gap: var(--besoq-space-2);
+    }
+
+    .swatch__chip {
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--besoq-surface-divider);
+    }
+
+    .swatch__name {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-secondary);
+    }
+
+    .swatch__hex {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-2xs);
+      color: var(--besoq-text-tertiary);
+    }
+
+    /* ── type specimens ── */
+    .specimen {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--besoq-space-3);
+      padding-block: var(--besoq-space-5);
+      border-bottom: 1px solid var(--besoq-surface-divider);
+    }
+
+    @media (min-width: 768px) {
+      .specimen {
+        grid-template-columns: 1fr 3fr;
+        gap: var(--besoq-space-7);
+      }
+    }
+
+    .specimen__label {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-tertiary);
+      letter-spacing: var(--besoq-letter-spacing-caps);
+    }
+
+    /* ── icon grid ── */
+    .icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+      gap: var(--besoq-space-4);
+    }
+
+    .icons__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--besoq-space-2);
+      padding-block: var(--besoq-space-4);
+      border: 1px solid var(--besoq-surface-divider);
+    }
+
+    .icons__name {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-secondary);
+    }
+
+    /* ── PDP example ── */
+    .pdp {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--besoq-space-7);
+    }
+
+    @media (min-width: 1024px) {
+      .pdp {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+
+    .pdp__image {
+      aspect-ratio: 4 / 5;
+      background: var(--besoq-color-linen);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pdp__placeholder {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-tertiary);
+      letter-spacing: var(--besoq-letter-spacing-caps);
+    }
+
+    .pdp__spec {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: var(--besoq-space-2) var(--besoq-space-4);
+      padding-block: var(--besoq-space-3);
+      border-top: 1px solid var(--besoq-surface-divider);
+      border-bottom: 1px solid var(--besoq-surface-divider);
+    }
+
+    .pdp__spec dt {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-tertiary);
+      letter-spacing: var(--besoq-letter-spacing-caps);
+      text-transform: lowercase;
+      margin: 0;
+    }
+
+    .pdp__spec dd {
+      margin: 0;
+      font-family: var(--besoq-font-sans);
+      font-size: var(--besoq-font-size-base);
+    }
+
+    /* ── pattern preview ── */
+    .pattern-preview {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--besoq-space-5);
+    }
+
+    @media (min-width: 768px) {
+      .pattern-preview {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .pattern-preview img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 1px solid var(--besoq-surface-divider);
+    }
+
+    /* ── seal grid ── */
+    .seals {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--besoq-space-5);
+    }
+
+    .seals img {
+      width: 100%;
+      max-width: 160px;
+      border: 1px solid var(--besoq-surface-divider);
+      padding: var(--besoq-space-4);
+    }
+
+    /* ── footer ── */
+    .showcase-footer {
+      padding-block: var(--besoq-space-9);
+      border-top: 1px solid var(--besoq-surface-divider);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="besoq-container stack-lg">
+
+    <!-- ───────── Hero ───────── -->
+    <header class="stack">
+      <p class="section-eyebrow">brand identity · v1.0 · may 2026</p>
+      <h1 class="besoq-text-headline" style="font-size: var(--besoq-font-size-5xl);">
+        be so quiet.
+      </h1>
+      <p class="besoq-text-editorial" style="max-width: 60ch;">
+        besoq is a clothing brand built on restraint. the name is an acronym of its
+        philosophy: be so quiet. this page is a single-screen tour of the visual
+        system — palette, type, icons, lockups, seals, and a worked example of a
+        product page rendered with the design tokens.
+      </p>
+    </header>
+
+    <!-- ───────── Wordmarks ───────── -->
+    <section class="stack">
+      <p class="section-eyebrow">01 — wordmarks</p>
+
+      <div class="specimen">
+        <span class="specimen__label">primary</span>
+        <img src="assets/wordmarks/besoq-wordmark.svg" alt="besoq" style="height: 80px; width: auto;">
+      </div>
+
+      <div class="specimen">
+        <span class="specimen__label">editorial (uppercase)</span>
+        <img src="assets/wordmarks/besoq-wordmark-editorial.svg" alt="BESOQ" style="height: 60px; width: auto;">
+      </div>
+
+      <div class="specimen">
+        <span class="specimen__label">monogram</span>
+        <img src="assets/wordmarks/besoq-monogram.svg" alt="bsq" style="height: 80px; width: auto;">
+      </div>
+
+      <div class="specimen" style="background: var(--besoq-color-ash); padding: var(--besoq-space-5); border-bottom: 0;">
+        <span class="specimen__label" style="color: var(--besoq-color-stone);">on dark</span>
+        <img src="assets/wordmarks/besoq-wordmark-on-dark.svg" alt="besoq" style="height: 60px; width: auto;">
+      </div>
+    </section>
+
+    <!-- ───────── Palette ───────── -->
+    <section class="stack">
+      <p class="section-eyebrow">02 — palette</p>
+      <div class="palette">
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-bone)"></div>
+          <span class="swatch__name">bone</span>
+          <span class="swatch__hex">#F4EFE6</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-ash)"></div>
+          <span class="swatch__name">ash</span>
+          <span class="swatch__hex">#1A1A1A</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-stone)"></div>
+          <span class="swatch__name">stone</span>
+          <span class="swatch__hex">#A89B8C</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-sage)"></div>
+          <span class="swatch__name">sage</span>
+          <span class="swatch__hex">#9CA38F</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-charcoal)"></div>
+          <span class="swatch__name">charcoal</span>
+          <span class="swatch__hex">#3C3C3C</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-linen)"></div>
+          <span class="swatch__name">linen</span>
+          <span class="swatch__hex">#E4DDCE</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-clay)"></div>
+          <span class="swatch__name">clay</span>
+          <span class="swatch__hex">#B89F86</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background: var(--besoq-color-ink)"></div>
+          <span class="swatch__name">ink</span>
+          <span class="swatch__hex">#11110F</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Type ───────── -->
+    <section class="stack">
+      <p class="section-eyebrow">03 — type</p>
+
+      <div class="specimen">
+        <span class="specimen__label">eyebrow · sans · 13px</span>
+        <span class="besoq-text-eyebrow">besoq — autumn 26</span>
+      </div>
+
+      <div class="specimen">
+        <span class="specimen__label">headline · serif · 48px</span>
+        <span class="besoq-text-headline">the long coat</span>
+      </div>
+
+      <div class="specimen">
+        <span class="specimen__label">subhead · sans · 22px</span>
+        <span class="besoq-text-subhead">eleven months of fittings.</span>
+      </div>
+
+      <div class="specimen">
+        <span class="specimen__label">body · sans · 16px</span>
+        <span class="besoq-text-body">a 380 gsm pressed wool from biella, in stone. unlined for movement. four buttons. no logo, inside or out.</span>
+      </div>
+
+      <div class="specimen">
+        <span class="specimen__label">editorial · serif · 18px</span>
+        <span class="besoq-text-editorial">we believe a wardrobe is built, not bought. we believe in the dignity of a hem that hangs straight.</span>
+      </div>
+
+      <div class="specimen">
+        <span class="specimen__label">spec · mono · 14px</span>
+        <span class="besoq-text-spec">besoq-aw26-coat-long-stone-m-r1   €&nbsp;580</span>
+      </div>
+
+      <div class="specimen">
+        <span class="specimen__label">caption · sans · 13px</span>
+        <span class="besoq-text-caption">we will repair this. for as long as you wear it.</span>
+      </div>
+    </section>
+
+    <!-- ───────── Icons ───────── -->
+    <section class="stack">
+      <p class="section-eyebrow">04 — icons</p>
+      <div class="icons">
+        <div class="icons__item"><img src="assets/icons/24/search.svg" alt="" width="24" height="24"><span class="icons__name">search</span></div>
+        <div class="icons__item"><img src="assets/icons/24/account.svg" alt="" width="24" height="24"><span class="icons__name">account</span></div>
+        <div class="icons__item"><img src="assets/icons/24/bag.svg" alt="" width="24" height="24"><span class="icons__name">bag</span></div>
+        <div class="icons__item"><img src="assets/icons/24/wishlist.svg" alt="" width="24" height="24"><span class="icons__name">wishlist</span></div>
+        <div class="icons__item"><img src="assets/icons/24/menu.svg" alt="" width="24" height="24"><span class="icons__name">menu</span></div>
+        <div class="icons__item"><img src="assets/icons/24/close.svg" alt="" width="24" height="24"><span class="icons__name">close</span></div>
+        <div class="icons__item"><img src="assets/icons/24/arrow.svg" alt="" width="24" height="24"><span class="icons__name">arrow</span></div>
+        <div class="icons__item"><img src="assets/icons/24/check.svg" alt="" width="24" height="24"><span class="icons__name">check</span></div>
+        <div class="icons__item"><img src="assets/icons/24/minus.svg" alt="" width="24" height="24"><span class="icons__name">minus</span></div>
+        <div class="icons__item"><img src="assets/icons/24/plus.svg" alt="" width="24" height="24"><span class="icons__name">plus</span></div>
+        <div class="icons__item"><img src="assets/icons/24/external.svg" alt="" width="24" height="24"><span class="icons__name">external</span></div>
+        <div class="icons__item"><img src="assets/icons/24/care.svg" alt="" width="24" height="24"><span class="icons__name">care</span></div>
+      </div>
+    </section>
+
+    <!-- ───────── Lockups ───────── -->
+    <section class="stack">
+      <p class="section-eyebrow">05 — line lockups</p>
+      <div class="stack">
+        <img src="assets/lockups/besoq-lockup-permanent.svg" alt="besoq — permanent" style="width: 100%; max-width: 480px;">
+        <img src="assets/lockups/besoq-lockup-spring-26.svg" alt="besoq — spring 26" style="width: 100%; max-width: 480px;">
+        <img src="assets/lockups/besoq-lockup-autumn-26.svg" alt="besoq — autumn 26" style="width: 100%; max-width: 480px;">
+        <img src="assets/lockups/besoq-lockup-study-no-03.svg" alt="besoq — study no. 03" style="width: 100%; max-width: 480px;">
+      </div>
+    </section>
+
+    <!-- ───────── Seals & patterns ───────── -->
+    <section class="stack">
+      <p class="section-eyebrow">06 — seals & patterns</p>
+      <div class="seals">
+        <div class="stack">
+          <img src="assets/seals/besoq-seal.svg" alt="besoq seal">
+          <span class="swatch__name">seal</span>
+        </div>
+        <div class="stack">
+          <img src="assets/seals/besoq-seal-repaired.svg" alt="besoq repaired seal">
+          <span class="swatch__name">seal · repaired</span>
+        </div>
+      </div>
+
+      <div class="pattern-preview" style="margin-top: var(--besoq-space-7);">
+        <div class="stack">
+          <img src="assets/patterns/bsq-jacquard.svg" alt="bsq jacquard pattern">
+          <span class="swatch__name">bsq jacquard</span>
+        </div>
+        <div class="stack">
+          <img src="assets/patterns/bone-on-bone-weave.svg" alt="bone-on-bone weave">
+          <span class="swatch__name">bone-on-bone weave</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── PDP example ───────── -->
+    <section class="stack">
+      <p class="section-eyebrow">07 — product page (worked example)</p>
+
+      <div class="pdp">
+        <div class="pdp__image" aria-hidden="true">
+          <span class="pdp__placeholder">studio still life</span>
+        </div>
+
+        <div class="stack">
+          <span class="besoq-text-eyebrow">besoq — autumn 26</span>
+          <h2 class="besoq-text-headline">the long coat</h2>
+
+          <p class="besoq-text-editorial">
+            a 380 gsm pressed wool from biella, in stone. unlined for movement.
+            four buttons. no logo, inside or out.
+          </p>
+
+          <p class="besoq-text-body">
+            made in portugal, in a small atelier we have worked with for two seasons.
+          </p>
+
+          <dl class="pdp__spec besoq-num-tabular">
+            <dt>cloth</dt>
+            <dd>380 gsm wool, 100%</dd>
+            <dt>mill</dt>
+            <dd>biella</dd>
+            <dt>make</dt>
+            <dd>portugal</dd>
+            <dt>buttons</dt>
+            <dd>horn</dd>
+          </dl>
+
+          <button>add to bag &mdash; € 580</button>
+
+          <p class="besoq-text-caption" style="margin-top: var(--besoq-space-3);">
+            we will repair this. for as long as you wear it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Tagline closing ───────── -->
+    <footer class="showcase-footer">
+      <p class="besoq-text-headline">be so quiet.</p>
+      <p class="besoq-text-caption" style="margin-top: var(--besoq-space-5);">— besoq</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

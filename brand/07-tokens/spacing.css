@@ -1,0 +1,151 @@
+/*
+ * besoq — spacing & layout tokens
+ * v1.0
+ *
+ * Reference: brand/03-visual/04-grid-and-layout.md
+ *
+ * The base unit is 8px / 2mm. All spacing is a multiple of this unit.
+ */
+
+:root {
+  /* ─── Spacing scale (multiples of 8px base) ─── */
+  --besoq-space-0:   0;
+  --besoq-space-1:   4px;
+  --besoq-space-2:   8px;   /* base unit */
+  --besoq-space-3:   12px;
+  --besoq-space-4:   16px;
+  --besoq-space-5:   24px;
+  --besoq-space-6:   32px;
+  --besoq-space-7:   48px;
+  --besoq-space-8:   64px;
+  --besoq-space-9:   96px;
+  --besoq-space-10:  128px;
+  --besoq-space-11:  192px;
+  --besoq-space-12:  256px;
+
+  /* ─── Container widths ─── */
+  --besoq-container-sm:   100%;       /* < 768px, padding-driven */
+  --besoq-container-md:   768px;
+  --besoq-container-lg:   1024px;
+  --besoq-container-xl:   1280px;     /* maximum content width */
+  --besoq-container-prose: 72ch;      /* long-form text container */
+
+  /* ─── Container padding (responsive) ─── */
+  --besoq-container-padding-sm: 16px;
+  --besoq-container-padding-md: 32px;
+  --besoq-container-padding-lg: 64px;
+  --besoq-container-padding-xl: 64px;
+
+  /* ─── Vertical rhythm between major sections ─── */
+  --besoq-section-rhythm-sm:    48px;
+  --besoq-section-rhythm-md:    64px;
+  --besoq-section-rhythm-lg:    128px;
+
+  /* ─── Grid columns ─── */
+  --besoq-grid-columns-sm:    4;
+  --besoq-grid-columns-md:    8;
+  --besoq-grid-columns-lg:    12;
+  --besoq-grid-gutter-sm:     16px;
+  --besoq-grid-gutter-md:     24px;
+  --besoq-grid-gutter-lg:     24px;
+  --besoq-grid-gutter-xl:     32px;
+
+  /* ─── Component sizing ─── */
+  --besoq-control-height-sm:  32px;
+  --besoq-control-height-md:  44px;   /* default form input height */
+  --besoq-control-height-lg:  56px;   /* primary CTA */
+
+  /* ─── Border radii ───
+   * The brand uses square corners. Every radius is 0.
+   * These tokens exist to prevent ad-hoc rounding in product code.
+   */
+  --besoq-radius-0:      0;
+  --besoq-radius-sm:     0;
+  --besoq-radius-md:     0;
+  --besoq-radius-lg:     0;
+  --besoq-radius-full:   0;  /* yes — even on circles, see iconography for the seal */
+
+  /* ─── Border widths ─── */
+  --besoq-border-width-hair:    0.5px;
+  --besoq-border-width-default: 1px;
+  --besoq-border-width-strong:  2px;
+
+  /* ─── Z-index scale ─── */
+  --besoq-z-base:          0;
+  --besoq-z-raised:        10;
+  --besoq-z-sticky:        100;
+  --besoq-z-overlay:       1000;
+  --besoq-z-modal:         1100;
+  --besoq-z-toast:         1200;
+
+  /* ─── Focus ring ─── */
+  --besoq-focus-ring-width:  2px;
+  --besoq-focus-ring-offset: 2px;
+  --besoq-focus-ring-color:  var(--besoq-border-focus);
+}
+
+/*
+ * Responsive container — applies the appropriate padding
+ * at each breakpoint. Use as <div class="besoq-container">.
+ */
+.besoq-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--besoq-container-padding-sm);
+}
+
+@media (min-width: 768px) {
+  .besoq-container {
+    padding-inline: var(--besoq-container-padding-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .besoq-container {
+    padding-inline: var(--besoq-container-padding-lg);
+  }
+}
+
+@media (min-width: 1440px) {
+  .besoq-container {
+    max-width: var(--besoq-container-xl);
+    padding-inline: var(--besoq-container-padding-xl);
+  }
+}
+
+/*
+ * Prose container for long-form text — ensures lines stay
+ * within the brand's readable line-length window.
+ */
+.besoq-prose {
+  max-width: var(--besoq-container-prose);
+  margin-inline: auto;
+}
+
+/*
+ * Section rhythm — spacing between major page sections.
+ */
+.besoq-section {
+  padding-block: var(--besoq-section-rhythm-sm);
+}
+
+@media (min-width: 768px) {
+  .besoq-section {
+    padding-block: var(--besoq-section-rhythm-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .besoq-section {
+    padding-block: var(--besoq-section-rhythm-lg);
+  }
+}
+
+/*
+ * Focus ring — applied universally. Square; never glowing.
+ */
+:where(:focus-visible) {
+  outline: var(--besoq-focus-ring-width) solid var(--besoq-focus-ring-color);
+  outline-offset: var(--besoq-focus-ring-offset);
+  border-radius: 0;
+}
