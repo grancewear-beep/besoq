@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  besoq — editorial wordmark
+  v1.0
+  
+  Uppercase. Letter-spacing 0.20em. Ash (#1A1A1A) on transparent.
+  Used only for press releases, legal documents, retail signage.
+  Reference: brand/03-visual/01-logo-system.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 600 160"
+     role="img"
+     aria-label="BESOQ">
+  <title>BESOQ</title>
+  <desc>besoq editorial wordmark, uppercase, used for press and signage only</desc>
+  <text x="300" y="100"
+        text-anchor="middle"
+        font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="72"
+        font-weight="400"
+        letter-spacing="14.4"
+        fill="#1A1A1A">BESOQ</text>
+</svg>

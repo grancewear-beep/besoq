@@ -1,0 +1,136 @@
+/*
+ * besoq — design system index
+ * v1.0
+ *
+ * The single import that drops the brand system into a project.
+ *
+ *   @import url("./brand/07-tokens/index.css");
+ *
+ * Sets:
+ *  - Colour custom properties (light + dark variants)
+ *  - Typography custom properties + utility classes
+ *  - Spacing & grid tokens
+ *  - Motion tokens & reduced-motion handler
+ *  - Body baseline (background, text colour, font, antialiasing)
+ */
+
+@import url("./colors.css");
+@import url("./typography.css");
+@import url("./spacing.css");
+@import url("./motion.css");
+
+/* ─── Body baseline ─── */
+html {
+  background-color: var(--besoq-surface-background);
+  color: var(--besoq-text-primary);
+  /* font-* are inherited from typography.css */
+}
+
+body {
+  margin: 0;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ─── Selection style — tonal, not coloured ─── */
+::selection {
+  background-color: var(--besoq-color-stone);
+  color: var(--besoq-color-bone);
+}
+
+/* ─── Default link style — quiet ─── */
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: var(--besoq-transition-opacity);
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ─── Default heading reset — type system handles weight/size ─── */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: var(--besoq-font-weight-regular);
+}
+
+/* ─── Default paragraph spacing ─── */
+p + p {
+  margin-top: var(--besoq-paragraph-spacing);
+}
+
+/* ─── Image baseline ─── */
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+/* ─── Button baseline — the brand uses text-link buttons by default ─── */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 0;
+  padding: var(--besoq-space-3) var(--besoq-space-5);
+  cursor: pointer;
+  letter-spacing: var(--besoq-letter-spacing-caps);
+  text-transform: lowercase;
+  transition: var(--besoq-transition-opacity);
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button:active {
+  opacity: 0.9;
+}
+
+/* ─── Form input baseline ─── */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: var(--besoq-font-size-base);
+  color: var(--besoq-text-primary);
+  background: var(--besoq-surface-background);
+  border: 0;
+  border-bottom: 1px solid var(--besoq-border-default);
+  border-radius: 0;
+  padding: var(--besoq-space-2) 0;
+  width: 100%;
+  appearance: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-bottom-color: var(--besoq-border-focus);
+}
+
+label {
+  display: block;
+  font-size: var(--besoq-font-size-xs);
+  letter-spacing: var(--besoq-letter-spacing-caps);
+  color: var(--besoq-text-tertiary);
+  margin-bottom: var(--besoq-space-1);
+}
+
+/* ─── HR — quiet horizontal rule ─── */
+hr {
+  border: 0;
+  border-top: 1px solid var(--besoq-surface-divider);
+  margin-block: var(--besoq-space-7);
+}

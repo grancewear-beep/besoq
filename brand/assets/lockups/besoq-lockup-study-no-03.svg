@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  besoq — lockup, study no. 03
+  v1.0
+  
+  Studies are numbered, not named. Each study identifier persists permanently —
+  there is only ever one "study no. 03".
+  
+  Reference: brand/05-product/01-collection-system.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 800 160"
+     role="img"
+     aria-label="besoq — study no. 03">
+  <title>besoq — study no. 03</title>
+  <desc>lockup of the besoq wordmark with the study no. 03 identifier</desc>
+  <text x="400" y="100"
+        text-anchor="middle"
+        font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="44"
+        font-weight="400"
+        letter-spacing="5.28"
+        fill="#1A1A1A">besoq — study no. 03</text>
+</svg>

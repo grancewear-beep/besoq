@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-label="care" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter">
+  <title>care</title>
+  <line x1="4" y1="13" x2="12" y2="4"/>
+  <circle cx="4.3" cy="12.7" r="0.5" fill="currentColor" stroke="none"/>
+  <line x1="12" y1="4" x2="13.5" y2="2.5"/>
+  <line x1="11.5" y1="3.5" x2="13" y2="5"/>
+  <path d="M2 9.5c1 0 1-1 2.5-1s1.5 1 2.5 1"/>
+</svg>

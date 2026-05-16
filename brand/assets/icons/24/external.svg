@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="external link" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+  <title>external</title>
+  <polyline points="13,5 19,5 19,11"/>
+  <line x1="19" y1="5" x2="11" y2="13"/>
+  <polyline points="17,14 17,19 5,19 5,7 10,7"/>
+</svg>

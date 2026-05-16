@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  care — needle and thread. The brand's repair service icon.
+  The only icon in the system with a slightly poetic form.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="care" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+  <title>care</title>
+  <line x1="6" y1="20" x2="18" y2="6"/>
+  <circle cx="6.5" cy="19.5" r="0.6" fill="currentColor" stroke="none"/>
+  <line x1="18" y1="6" x2="20" y2="4"/>
+  <line x1="17" y1="5" x2="19" y2="7"/>
+  <path d="M3 14c2 0 2-2 4-2s2 2 4 2"/>
+</svg>

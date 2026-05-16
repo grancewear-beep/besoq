@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  besoq — bone-on-bone weave
+  v1.0
+  
+  A near-invisible woven texture used as a paper-finish pattern on
+  bone-stock packaging tissue. In production this is a *paper choice*
+  rather than a printed pattern; this SVG exists as a reference
+  approximation for digital surfaces (email banners, web background tiles)
+  where a tonal texture is desired.
+  
+  Reference: brand/03-visual/07-illustration-and-pattern.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 480 480"
+     role="img"
+     aria-label="bone-on-bone weave">
+  <title>bone-on-bone weave</title>
+  <desc>tonal weave reference for packaging and digital surfaces</desc>
+
+  <defs>
+    <pattern id="weave" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#F4EFE6"/>
+      <line x1="0" y1="0" x2="8" y2="8"
+            stroke="#E4DDCE"
+            stroke-width="0.5"
+            opacity="0.6"/>
+      <line x1="8" y1="0" x2="0" y2="8"
+            stroke="#E4DDCE"
+            stroke-width="0.5"
+            opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <rect width="480" height="480" fill="url(#weave)"/>
+</svg>

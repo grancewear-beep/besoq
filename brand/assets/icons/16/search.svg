@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-label="search" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter">
+  <title>search</title>
+  <circle cx="7.5" cy="7.5" r="4"/>
+  <line x1="10.5" y1="10.5" x2="13.5" y2="13.5"/>
+</svg>

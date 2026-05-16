@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  besoq — social profile picture
+  v1.0
+  
+  Square 1080×1080. Bone background, centred wordmark. Used for
+  Instagram, Pinterest, YouTube, Are.na, and any other platform's
+  profile slot.
+  
+  Reference: brand/04-applications/06-social-media.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1080 1080"
+     role="img"
+     aria-label="besoq">
+  <title>besoq</title>
+  <rect width="1080" height="1080" fill="#F4EFE6"/>
+  <text x="540" y="595"
+        text-anchor="middle"
+        font-family="Söhne, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="220"
+        font-weight="400"
+        letter-spacing="26.4"
+        fill="#1A1A1A">besoq</text>
+</svg>
