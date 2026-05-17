@@ -1,0 +1,73 @@
+/*
+ * besoq — tipoqrafiya tokenləri
+ * v2.0
+ *
+ * İki şrift: Inter (sans) + JetBrains Mono (texniki).
+ * Üçüncü şrift qadağandır.
+ */
+
+:root {
+  /* ─── Şrift ailələri ─── */
+  --besoq-font-sans:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  --besoq-font-mono:
+    "JetBrains Mono",
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+
+  /* ─── Çəkilər ─── */
+  --besoq-font-normal:   400;
+  --besoq-font-semibold: 600;
+
+  /* ─── Ölçülər ─── */
+  --besoq-text-xs:   12px;
+  --besoq-text-sm:   14px;
+  --besoq-text-base: 16px;
+  --besoq-text-md:   18px;
+  --besoq-text-lg:   22px;
+  --besoq-text-xl:   28px;
+  --besoq-text-2xl:  36px;
+  --besoq-text-3xl:  48px;
+
+  /* ─── Sətir hündürlüyü ─── */
+  --besoq-leading-tight:   1.10;
+  --besoq-leading-snug:    1.35;
+  --besoq-leading-normal:  1.55;
+
+  /* ─── Hərflərarası məsafə ─── */
+  --besoq-tracking-0:        0;
+  --besoq-tracking-wordmark: 0.12em;
+  --besoq-tracking-caps:     0.05em;
+
+  /* ─── Maksimum sətir uzunluğu ─── */
+  --besoq-max-setir: 72ch;
+}
+
+/* ─── Əsas bədən stili ─── */
+html {
+  font-family: var(--besoq-font-sans);
+  font-size: var(--besoq-text-base);
+  font-weight: var(--besoq-font-normal);
+  line-height: var(--besoq-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Logo yazı stili ─── */
+.besoq-logo {
+  font-family: var(--besoq-font-sans);
+  font-weight: var(--besoq-font-normal);
+  letter-spacing: var(--besoq-tracking-wordmark);
+  text-transform: lowercase;
+}

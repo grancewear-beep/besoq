@@ -1,0 +1,55 @@
+/*
+ * besoq — boşluq tokenləri
+ * v2.0
+ *
+ * Bütün boşluqlar 8px-in qatıdır.
+ */
+
+:root {
+  /* ─── Boşluq ölçüləri ─── */
+  --besoq-space-1:   4px;
+  --besoq-space-2:   8px;
+  --besoq-space-3:   12px;
+  --besoq-space-4:   16px;
+  --besoq-space-5:   24px;
+  --besoq-space-6:   32px;
+  --besoq-space-7:   48px;
+  --besoq-space-8:   64px;
+  --besoq-space-9:   96px;
+
+  /* ─── Kontent eni ─── */
+  --besoq-max-en:    1280px;
+  --besoq-prose-en:  72ch;
+
+  /* ─── Padding (responsive) ─── */
+  --besoq-padding-mobil:   16px;
+  --besoq-padding-planset: 32px;
+  --besoq-padding-desktop: 64px;
+
+  /* ─── Künclar ─── */
+  --besoq-radius: 0;  /* yuvarlaq künc yoxdur */
+
+  /* ─── Haşiyə ─── */
+  --besoq-border-default: 1px;
+  --besoq-border-strong:  2px;
+}
+
+/* ─── Konteyner ─── */
+.besoq-konteyner {
+  width: 100%;
+  max-width: var(--besoq-max-en);
+  margin-inline: auto;
+  padding-inline: var(--besoq-padding-mobil);
+}
+
+@media (min-width: 768px) {
+  .besoq-konteyner {
+    padding-inline: var(--besoq-padding-planset);
+  }
+}
+
+@media (min-width: 1024px) {
+  .besoq-konteyner {
+    padding-inline: var(--besoq-padding-desktop);
+  }
+}
