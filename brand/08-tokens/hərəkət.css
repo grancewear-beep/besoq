@@ -1,0 +1,30 @@
+/*
+ * besoq — hərəkət tokenləri
+ * v2.0
+ *
+ * Maksimum 240ms. Yalnız navigasiya üçün.
+ */
+
+:root {
+  /* ─── Vaxt ─── */
+  --besoq-vaxt-suretli: 120ms;
+  --besoq-vaxt-adi:     160ms;
+  --besoq-vaxt-yavash:  200ms;
+
+  /* ─── Easing ─── */
+  --besoq-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ─── Hazır keçidlər ─── */
+  --besoq-kecid-opacity: opacity var(--besoq-vaxt-adi) var(--besoq-ease);
+}
+
+/* ─── Hərəkət azaltma ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

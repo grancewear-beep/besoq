@@ -1,0 +1,84 @@
+/*
+ * besoq — bütün tokenləri bir yerdə
+ * v2.0
+ *
+ * Bu faylı import et, hər şey gəlir:
+ *   @import url("./brand/08-tokens/index.css");
+ */
+
+@import url("./rənglər.css");
+@import url("./tipoqrafiya.css");
+@import url("./boşluq.css");
+@import url("./hərəkət.css");
+
+/* ─── Bədən əsası ─── */
+html {
+  background-color: var(--besoq-fon);
+  color: var(--besoq-metn);
+}
+
+body {
+  margin: 0;
+}
+
+/* ─── Seçim ─── */
+::selection {
+  background-color: var(--besoq-das);
+  color: var(--besoq-sumuk);
+}
+
+/* ─── Link ─── */
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: var(--besoq-kecid-opacity);
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ─── Düymə ─── */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--besoq-duyma-metn);
+  background: var(--besoq-duyma-fon);
+  border: none;
+  border-radius: 0;
+  padding: var(--besoq-space-3) var(--besoq-space-5);
+  cursor: pointer;
+  letter-spacing: var(--besoq-tracking-caps);
+  text-transform: lowercase;
+  transition: var(--besoq-kecid-opacity);
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* ─── Input ─── */
+input, select {
+  font-family: inherit;
+  font-size: var(--besoq-text-base);
+  border: 0;
+  border-bottom: 1px solid var(--besoq-ayirici);
+  border-radius: 0;
+  padding: var(--besoq-space-2) 0;
+  width: 100%;
+  background: transparent;
+  color: var(--besoq-metn);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-bottom-color: var(--besoq-metn);
+}
+
+/* ─── Xətt ─── */
+hr {
+  border: 0;
+  border-top: 1px solid var(--besoq-ayirici);
+  margin-block: var(--besoq-space-7);
+}
