@@ -1,0 +1,49 @@
+/*
+ * besoq — rəng tokenləri
+ * v2.0
+ *
+ * Brend heç vaxt təmiz ağ (#FFFFFF) və ya təmiz qara (#000000) istifadə etmir.
+ * Sümük — ağdır. Kül — qaradır.
+ */
+
+:root {
+  /* ─── Əsas palet ─── */
+  --besoq-sumuk:      #F4EFE6;  /* fon */
+  --besoq-kul:        #1A1A1A;  /* mətn, logo */
+  --besoq-das:        #A89B8C;  /* ikinci plan mətn */
+  --besoq-komur:      #3C3C3C;  /* uzun mətn */
+  --besoq-ketan:      #E4DDCE;  /* panel fonları */
+
+  /* ─── Semantik rənglər ─── */
+  --besoq-fon:            var(--besoq-sumuk);
+  --besoq-metn:           var(--besoq-kul);
+  --besoq-metn-ikinci:    var(--besoq-komur);
+  --besoq-metn-ucuncu:    var(--besoq-das);
+  --besoq-ayirici:        var(--besoq-ketan);
+  --besoq-duyma-fon:      var(--besoq-kul);
+  --besoq-duyma-metn:     var(--besoq-sumuk);
+
+  /* ─── Status (yalnız texniki) ─── */
+  --besoq-ugurlu:     #5C6B53;
+  --besoq-xeberdarliq: #A48852;
+  --besoq-xeta:       #8C4A3F;
+
+  /* ─── Məhsul rəngləri (daimi xətt) ─── */
+  --besoq-mehsul-black:  #1A1A1A;
+  --besoq-mehsul-white:  #F4EFE6;
+  --besoq-mehsul-grey:   #6B6B6B;
+}
+
+/*
+ * Tünd tema — gələcəkdə lazım olarsa.
+ * Hazırda istifadə olunmur.
+ */
+[data-tema="tund"] {
+  --besoq-fon:            var(--besoq-kul);
+  --besoq-metn:           var(--besoq-sumuk);
+  --besoq-metn-ikinci:    var(--besoq-ketan);
+  --besoq-metn-ucuncu:    var(--besoq-das);
+  --besoq-ayirici:        var(--besoq-komur);
+  --besoq-duyma-fon:      var(--besoq-sumuk);
+  --besoq-duyma-metn:     var(--besoq-kul);
+}

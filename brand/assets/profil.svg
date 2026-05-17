@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Instagram profil şəkli — 1080x1080 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="besoq">
+  <title>besoq</title>
+  <rect width="1080" height="1080" fill="#F4EFE6"/>
+  <text x="540" y="595"
+        text-anchor="middle"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="220"
+        font-weight="400"
+        letter-spacing="26.4"
+        fill="#1A1A1A">besoq</text>
+</svg>
