@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>besoq — investor presentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg">
+  <link rel="stylesheet" href="07-tokens/index.css">
+  <style>
+    /* ─── Pitch deck layout ─── */
+    * { box-sizing: border-box; }
+
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--besoq-space-9) var(--besoq-container-padding-lg);
+      border-bottom: 1px solid var(--besoq-surface-divider);
+      position: relative;
+    }
+
+    .slide--dark {
+      background: var(--besoq-color-ash);
+      color: var(--besoq-color-bone);
+    }
+
+    .slide--dark .slide__eyebrow {
+      color: var(--besoq-color-stone);
+    }
+
+    .slide--panel {
+      background: var(--besoq-color-linen);
+    }
+
+    .slide__eyebrow {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      letter-spacing: var(--besoq-letter-spacing-caps);
+      color: var(--besoq-text-tertiary);
+      text-transform: lowercase;
+      margin-bottom: var(--besoq-space-5);
+    }
+
+    .slide__headline {
+      font-family: var(--besoq-font-serif);
+      font-weight: var(--besoq-font-weight-light);
+      font-size: clamp(32px, 5vw, 64px);
+      line-height: var(--besoq-line-height-tight);
+      margin-bottom: var(--besoq-space-6);
+      max-width: 20ch;
+    }
+
+    .slide__subhead {
+      font-family: var(--besoq-font-sans);
+      font-size: var(--besoq-font-size-lg);
+      line-height: var(--besoq-line-height-normal);
+      max-width: 60ch;
+      margin-bottom: var(--besoq-space-5);
+    }
+
+    .slide__body {
+      font-family: var(--besoq-font-sans);
+      font-size: var(--besoq-font-size-base);
+      line-height: var(--besoq-line-height-editorial);
+      max-width: 65ch;
+      color: var(--besoq-text-secondary);
+    }
+
+    .slide__body p + p {
+      margin-top: var(--besoq-paragraph-spacing);
+    }
+
+    /* ─── Metric cards ─── */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--besoq-space-5);
+      margin-top: var(--besoq-space-7);
+    }
+
+    .metric {
+      padding: var(--besoq-space-5);
+      border: 1px solid var(--besoq-surface-divider);
+    }
+
+    .slide--dark .metric {
+      border-color: var(--besoq-color-charcoal);
+    }
+
+    .metric__value {
+      font-family: var(--besoq-font-serif);
+      font-size: var(--besoq-font-size-2xl);
+      line-height: 1;
+      margin-bottom: var(--besoq-space-2);
+    }
+
+    .metric__label {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      letter-spacing: var(--besoq-letter-spacing-caps);
+      color: var(--besoq-text-tertiary);
+    }
+
+    .slide--dark .metric__label {
+      color: var(--besoq-color-stone);
+    }
+
+    /* ─── Two-column layout ─── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--besoq-space-7);
+      margin-top: var(--besoq-space-6);
+    }
+
+    @media (min-width: 768px) {
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ─── Table ─── */
+    .pitch-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--besoq-space-5);
+      font-size: var(--besoq-font-size-sm);
+    }
+
+    .pitch-table th,
+    .pitch-table td {
+      text-align: left;
+      padding: var(--besoq-space-3) var(--besoq-space-4);
+      border-bottom: 1px solid var(--besoq-surface-divider);
+    }
+
+    .pitch-table th {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      letter-spacing: var(--besoq-letter-spacing-caps);
+      color: var(--besoq-text-tertiary);
+      font-weight: var(--besoq-font-weight-regular);
+    }
+
+    .slide--dark .pitch-table th,
+    .slide--dark .pitch-table td {
+      border-color: var(--besoq-color-charcoal);
+    }
+
+    .slide--dark .pitch-table th {
+      color: var(--besoq-color-stone);
+    }
+
+    /* ─── List styles ─── */
+    .pitch-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--besoq-space-5) 0 0 0;
+    }
+
+    .pitch-list li {
+      padding: var(--besoq-space-3) 0;
+      border-bottom: 1px solid var(--besoq-surface-divider);
+      font-size: var(--besoq-font-size-base);
+      line-height: var(--besoq-line-height-normal);
+    }
+
+    .slide--dark .pitch-list li {
+      border-color: var(--besoq-color-charcoal);
+    }
+
+    .pitch-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pitch-list li strong {
+      font-weight: var(--besoq-font-weight-semibold);
+    }
+
+    /* ─── Positioning map ─── */
+    .position-map {
+      margin-top: var(--besoq-space-7);
+      padding: var(--besoq-space-7);
+      border: 1px solid var(--besoq-surface-divider);
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      white-space: pre;
+      overflow-x: auto;
+      line-height: 1.8;
+    }
+
+    /* ─── Timeline ─── */
+    .timeline {
+      margin-top: var(--besoq-space-6);
+    }
+
+    .timeline__item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: var(--besoq-space-4);
+      padding: var(--besoq-space-4) 0;
+      border-bottom: 1px solid var(--besoq-surface-divider);
+    }
+
+    .slide--dark .timeline__item {
+      border-color: var(--besoq-color-charcoal);
+    }
+
+    .timeline__date {
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-tertiary);
+      letter-spacing: var(--besoq-letter-spacing-caps);
+    }
+
+    .slide--dark .timeline__date {
+      color: var(--besoq-color-stone);
+    }
+
+    /* ─── Navigation dots ─── */
+    .slide-nav {
+      position: fixed;
+      right: var(--besoq-space-5);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: var(--besoq-space-2);
+      z-index: var(--besoq-z-sticky);
+    }
+
+    .slide-nav__dot {
+      width: 6px;
+      height: 6px;
+      border: 1px solid var(--besoq-color-stone);
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .slide-nav__dot:hover,
+    .slide-nav__dot.active {
+      background: var(--besoq-color-ash);
+    }
+
+    /* ─── Print styles ─── */
+    @media print {
+      .slide {
+        min-height: auto;
+        page-break-after: always;
+        padding: 2cm;
+      }
+      .slide-nav { display: none; }
+    }
+
+    /* ─── Footer ─── */
+    .pitch-footer {
+      text-align: center;
+      padding: var(--besoq-space-7);
+      font-family: var(--besoq-font-mono);
+      font-size: var(--besoq-font-size-xs);
+      color: var(--besoq-text-tertiary);
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- Navigation -->
+<nav class="slide-nav" aria-label="Slide navigation">
+  <a href="#cover" class="slide-nav__dot active" title="Cover"></a>
+  <a href="#problem" class="slide-nav__dot" title="Problem"></a>
+  <a href="#solution" class="slide-nav__dot" title="Solution"></a>
+  <a href="#market" class="slide-nav__dot" title="Market"></a>
+  <a href="#product" class="slide-nav__dot" title="Product"></a>
+  <a href="#model" class="slide-nav__dot" title="Business Model"></a>
+  <a href="#moat" class="slide-nav__dot" title="Competitive Moat"></a>
+  <a href="#traction" class="slide-nav__dot" title="Traction"></a>
+  <a href="#roadmap" class="slide-nav__dot" title="Roadmap"></a>
+  <a href="#financials" class="slide-nav__dot" title="Financials"></a>
+  <a href="#ask" class="slide-nav__dot" title="The Ask"></a>
+  <a href="#close" class="slide-nav__dot" title="Close"></a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 01 — COVER
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide--dark" id="cover">
+  <p class="slide__eyebrow">investor presentation · confidential · 2026</p>
+  <h1 class="slide__headline" style="max-width: 16ch; font-size: clamp(48px, 7vw, 84px);">
+    be so quiet.
+  </h1>
+  <p class="slide__subhead" style="color: var(--besoq-color-stone);">
+    A contemporary wardrobe brand built on restraint, honest materials, and the discipline of less.
+  </p>
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric__value">€580</div>
+      <div class="metric__label">avg. outerwear price</div>
+    </div>
+    <div class="metric">
+      <div class="metric__value">2</div>
+      <div class="metric__label">collections per year</div>
+    </div>
+    <div class="metric">
+      <div class="metric__value">0</div>
+      <div class="metric__label">discounts. ever.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 02 — PROBLEM
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide" id="problem">
+  <p class="slide__eyebrow">01 — the problem</p>
+  <h2 class="slide__headline">The market is loud. The customer has stopped listening.</h2>
+  <div class="slide__body">
+    <p>A generation raised on monograms is now embarrassed by them. The post-logo customer has emerged — someone who has owned the hyped sneaker, the seasonal capsule, the logo bag — and given them all away.</p>
+    <p>They want quality without performance. Wardrobe without noise. But the market offers them two bad options:</p>
+  </div>
+  <div class="two-col">
+    <div>
+      <ul class="pitch-list">
+        <li><strong>Accessible minimalism</strong> — COS, Everlane, Uniqlo. Reasonable price, but trend-driven and impersonal. The cloth does not hold up.</li>
+        <li><strong>Quiet luxury</strong> — The Row, Lemaire, Jil Sander. Exquisite quality, but €2,000+ for a coat. Inaccessible for most.</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="pitch-list">
+        <li><strong>The gap:</strong> There is no brand at a contemporary price point that delivers luxury-house rigour with genuine restraint.</li>
+        <li><strong>The result:</strong> This customer currently buys secondhand, vintage, or no-name basics. They are underserved and waiting.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 03 — SOLUTION
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide--panel" id="solution">
+  <p class="slide__eyebrow">02 — the solution</p>
+  <h2 class="slide__headline">besoq fills the quiet space.</h2>
+  <p class="slide__subhead">
+    A wardrobe brand — not a fashion label — that earns its place through cloth, cut, and proportion rather than visible branding.
+  </p>
+  <div class="slide__body">
+    <p>The name is an acronym of our discipline: <strong>Be So Quiet.</strong> The wordmark is set small. The seal is hidden inside. The marketing is restrained. The clothes enter any room without announcing themselves.</p>
+  </div>
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric__value">Cloth</div>
+      <div class="metric__label">named mills, disclosed weight</div>
+    </div>
+    <div class="metric">
+      <div class="metric__value">Cut</div>
+      <div class="metric__label">proportion over trend</div>
+    </div>
+    <div class="metric">
+      <div class="metric__value">Repair</div>
+      <div class="metric__label">for as long as you wear it</div>
+    </div>
+    <div class="metric">
+      <div class="metric__value">No logo</div>
+      <div class="metric__label">invisible from one metre</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 04 — MARKET OPPORTUNITY
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide" id="market">
+  <p class="slide__eyebrow">03 — market opportunity</p>
+  <h2 class="slide__headline">The post-logo market is real — and largely empty.</h2>
+  <div class="slide__body">
+    <p>Three converging cultural shifts create the opening:</p>
+  </div>
+  <ul class="pitch-list">
+    <li><strong>Post-logo fatigue.</strong> A generation raised on monograms is now embarrassed by them. "Quiet" has become a status signal — but most brands chasing it still shout.</li>
+    <li><strong>Material literacy.</strong> Customers can read a fabric label. They know what GSM means. They ask about mills. Transparency is a competitive advantage, not a cost.</li>
+    <li><strong>Buy-less-buy-better.</strong> The secondhand market grew 25% YoY. The customer has learned to value durability over novelty. They will pay more per piece to buy fewer pieces.</li>
+  </ul>
+
+  <div class="position-map">                    LOUD
+                     |
+     Zara, Shein     |    Gucci, Balenciaga
+     (fast fashion)  |    (luxury logo houses)
+                     |
+   ACCESSIBLE ———————+——————— PREMIUM
+                     |
+     COS, Everlane,  |    The Row, Lemaire,
+     Uniqlo          |    Jil Sander
+                     |
+                     |        ▲ besoq sits here
+                     |        quiet + premium-accessible
+                    QUIET</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 05 — PRODUCT
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide--dark" id="product">
+  <p class="slide__eyebrow">04 — the product</p>
+  <h2 class="slide__headline">A wardrobe system, not a seasonal gamble.</h2>
+  <p class="slide__subhead" style="color: var(--besoq-color-stone);">
+    Four lines. One identity. No sub-brands. No noise.
+  </p>
+
+  <table class="pitch-table">
+    <thead>
+      <tr>
+        <th>line</th>
+        <th>what it is</th>
+        <th>cadence</th>
+        <th>sku count</th>
+        <th>price range</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Permanent</strong></td>
+        <td>Always-on core. Restocked, not redesigned.</td>
+        <td>Continuous</td>
+        <td>~30</td>
+        <td>€ 90 – 280</td>
+      </tr>
+      <tr>
+        <td><strong>Seasonal</strong></td>
+        <td>Spring + Autumn. Material and palette evolve.</td>
+        <td>2× per year</td>
+        <td>~20 each</td>
+        <td>€ 160 – 880</td>
+      </tr>
+      <tr>
+        <td><strong>Archive</strong></td>
+        <td>Past seasonal stock. Full price until gone.</td>
+        <td>Continuous</td>
+        <td>Variable</td>
+        <td>Original price</td>
+      </tr>
+      <tr>
+        <td><strong>Studies</strong></td>
+        <td>Numbered experiments. One fabric, explored deeply.</td>
+        <td>2–4× per year</td>
+        <td>3–6 each</td>
+        <td>Premium</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="metrics" style="margin-top: var(--besoq-space-7);">
+    <div class="metric">
+      <div class="metric__value">8</div>
+      <div class="metric__label">approved cloths in material library</div>
+    </div>
+    <div class="metric">
+      <div class="metric__value">Italy, PT, UK</div>
+      <div class="metric__label">mill and production countries</div>
+    </div>
+    <div class="metric">
+      <div class="metric__value">100%</div>
+      <div class="metric__label">natural fibre commitment</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 06 — BUSINESS MODEL
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide" id="model">
+  <p class="slide__eyebrow">05 — business model</p>
+  <h2 class="slide__headline">Direct, transparent, anti-discount.</h2>
+  <div class="two-col">
+    <div>
+      <h3 class="besoq-text-subhead">Revenue architecture</h3>
+      <ul class="pitch-list">
+        <li><strong>Direct-to-consumer.</strong> Own e-commerce channel first. No wholesale dependency at launch.</li>
+        <li><strong>Cost-plus pricing.</strong> Transparent, defensible margins. No .99 endings. No "from" prices.</li>
+        <li><strong>Zero discounting.</strong> No flash sales. No codes. No BFCM. No loyalty tier discounts. The price is the price — always.</li>
+        <li><strong>Permanent line = recurring revenue.</strong> 30 SKUs restocked indefinitely. Customers re-buy the same piece across years.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="besoq-text-subhead">Why this model works</h3>
+      <ul class="pitch-list">
+        <li><strong>Margin protection.</strong> No discounting means full-price sell-through is the only metric that matters. This forces design discipline.</li>
+        <li><strong>Inventory efficiency.</strong> A permanent line reduces dead stock. Past seasonal moves to archive at original price — not a clearance rack.</li>
+        <li><strong>Customer quality.</strong> Zero-discount policy self-selects for high-LTV customers who buy on conviction, not on deal.</li>
+        <li><strong>Low CAC.</strong> Editorial content, owned channels, word of mouth. No influencer codes. No performance ad dependency.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 07 — COMPETITIVE MOAT
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide--panel" id="moat">
+  <p class="slide__eyebrow">06 — competitive moat</p>
+  <h2 class="slide__headline">The moat is coherence. Any competitor can copy one row. None can copy the table.</h2>
+
+  <table class="pitch-table">
+    <thead>
+      <tr>
+        <th>vector</th>
+        <th>what others do</th>
+        <th>what besoq does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Logo</td>
+        <td>Visible, often large</td>
+        <td>Invisible from 1m; embossed inside only</td>
+      </tr>
+      <tr>
+        <td>Drop cadence</td>
+        <td>Weekly capsules, FOMO</td>
+        <td>2 collections/year + permanent line</td>
+      </tr>
+      <tr>
+        <td>Marketing</td>
+        <td>Performance ads, influencers</td>
+        <td>Editorial, owned channels, word of mouth</td>
+      </tr>
+      <tr>
+        <td>Material disclosure</td>
+        <td>"Premium fabric"</td>
+        <td>Mill name, weight, origin on every product page</td>
+      </tr>
+      <tr>
+        <td>Price logic</td>
+        <td>Markup-based, opaque</td>
+        <td>Cost-plus, transparent on request</td>
+      </tr>
+      <tr>
+        <td>Sale behaviour</td>
+        <td>Discounting, BFCM, codes</td>
+        <td>Never. Archive at full price only.</td>
+      </tr>
+      <tr>
+        <td>Repair</td>
+        <td>None or limited warranty</td>
+        <td>Lifetime repair for every garment sold</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="slide__body" style="margin-top: var(--besoq-space-6);">
+    <p><strong>Brand pillars that reinforce each other:</strong> Quiet. Considered. Lasting. Honest. A garment that is quiet but not lasting is decorative. A garment that is lasting but not honest is propaganda. All four must be present — and this compound discipline is the moat.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 08 — TRACTION & VALIDATION
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide" id="traction">
+  <p class="slide__eyebrow">07 — traction & validation</p>
+  <h2 class="slide__headline">Built, tested, ready to scale.</h2>
+  <div class="slide__body">
+    <p>The brand has completed its foundational infrastructure — design system, material library, product architecture, and go-to-market strategy. Key milestones:</p>
+  </div>
+  <ul class="pitch-list">
+    <li><strong>Material library: 8 approved cloths</strong> from named mills in Italy, Portugal, Belgium, UK, and USA. Each tested through a five-step process including 4-week studio wear trials.</li>
+    <li><strong>10 foundational garments designed</strong> — from the boxy shirt to the long coat. Pattern blocks versioned and protected.</li>
+    <li><strong>Complete brand system v1.0 shipped</strong> — visual identity, design tokens, verbal framework, packaging specs, digital guidelines. Ready for deployment.</li>
+    <li><strong>Production partnerships</strong> in Portugal (knit, cut-and-sew) and Northern Italy (premium outerwear).</li>
+    <li><strong>Pricing validated</strong> — € 90 (tees) to € 880 (outerwear). Cost-plus model yields healthy 65–70% gross margins at scale.</li>
+  </ul>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 09 — ROADMAP
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide--dark" id="roadmap">
+  <p class="slide__eyebrow">08 — roadmap</p>
+  <h2 class="slide__headline">18-month plan: launch, prove, grow.</h2>
+
+  <div class="timeline">
+    <div class="timeline__item">
+      <span class="timeline__date">q3 2026</span>
+      <span>E-commerce launch. Permanent line (30 SKUs) + Autumn 26 collection (20 SKUs). Direct-to-consumer, single market (EU).</span>
+    </div>
+    <div class="timeline__item">
+      <span class="timeline__date">q4 2026</span>
+      <span>Study no. 01 release. Begin building owned audience through editorial content. First press outreach to targeted publications.</span>
+    </div>
+    <div class="timeline__item">
+      <span class="timeline__date">q1 2027</span>
+      <span>Spring 27 collection release. Expand shipping to UK + select international. Archive line opens with Autumn 26 remaining stock.</span>
+    </div>
+    <div class="timeline__item">
+      <span class="timeline__date">q2 2027</span>
+      <span>Selective wholesale: 3–5 aligned retailers (curated multi-brand stores). Repair service fully operational.</span>
+    </div>
+    <div class="timeline__item">
+      <span class="timeline__date">q3 2027</span>
+      <span>Autumn 27 collection. Permanent line expansion to 36 SKUs. Evaluate first physical retail presence (pop-up or partner-in-store).</span>
+    </div>
+    <div class="timeline__item">
+      <span class="timeline__date">q4 2027</span>
+      <span>Break-even target. Begin planning own-retail (permanent space) for 2028.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 10 — FINANCIALS
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide" id="financials">
+  <p class="slide__eyebrow">09 — financial projections</p>
+  <h2 class="slide__headline">Conservative by design. Profitable by discipline.</h2>
+
+  <table class="pitch-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>year 1</th>
+        <th>year 2</th>
+        <th>year 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Revenue</strong></td>
+        <td>€ 320K</td>
+        <td>€ 1.1M</td>
+        <td>€ 2.8M</td>
+      </tr>
+      <tr>
+        <td><strong>Gross margin</strong></td>
+        <td>62%</td>
+        <td>66%</td>
+        <td>70%</td>
+      </tr>
+      <tr>
+        <td><strong>EBITDA</strong></td>
+        <td>–€ 180K</td>
+        <td>€ 40K</td>
+        <td>€ 420K</td>
+      </tr>
+      <tr>
+        <td><strong>Avg. order value</strong></td>
+        <td>€ 260</td>
+        <td>€ 310</td>
+        <td>€ 340</td>
+      </tr>
+      <tr>
+        <td><strong>Repeat rate</strong></td>
+        <td>15%</td>
+        <td>30%</td>
+        <td>42%</td>
+      </tr>
+      <tr>
+        <td><strong>SKU count (total)</strong></td>
+        <td>50</td>
+        <td>70</td>
+        <td>90</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="slide__body" style="margin-top: var(--besoq-space-6);">
+    <p><strong>Key assumptions:</strong> Zero discounting (100% full-price sell-through target). Low marketing spend (8–12% of revenue vs. industry 20–30%). High repeat purchase driven by permanent line and repair service. Conservative 2× growth factor year-over-year.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 11 — THE ASK
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide--panel" id="ask">
+  <p class="slide__eyebrow">10 — the ask</p>
+  <h2 class="slide__headline">€ 500K seed round.</h2>
+  <p class="slide__subhead">To launch, prove the model, and reach break-even within 18 months.</p>
+
+  <div class="two-col">
+    <div>
+      <h3 class="besoq-text-subhead">Use of funds</h3>
+      <table class="pitch-table">
+        <tbody>
+          <tr>
+            <td><strong>Production & inventory</strong></td>
+            <td>40%</td>
+            <td>€ 200K</td>
+          </tr>
+          <tr>
+            <td><strong>E-commerce & technology</strong></td>
+            <td>20%</td>
+            <td>€ 100K</td>
+          </tr>
+          <tr>
+            <td><strong>Brand & content</strong></td>
+            <td>20%</td>
+            <td>€ 100K</td>
+          </tr>
+          <tr>
+            <td><strong>Operations & team</strong></td>
+            <td>15%</td>
+            <td>€ 75K</td>
+          </tr>
+          <tr>
+            <td><strong>Reserve</strong></td>
+            <td>5%</td>
+            <td>€ 25K</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 class="besoq-text-subhead">What investors get</h3>
+      <ul class="pitch-list">
+        <li><strong>A brand with defensible positioning</strong> in a growing, underserved market segment.</li>
+        <li><strong>A zero-discount model</strong> that protects margins and builds long-term brand equity.</li>
+        <li><strong>A permanent line strategy</strong> that creates compounding, predictable revenue.</li>
+        <li><strong>Full brand infrastructure already built</strong> — the investment goes to product and growth, not to figuring out the brand.</li>
+        <li><strong>A clear path to profitability</strong> within 18 months, without requiring hypergrowth assumptions.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 12 — CLOSING
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide--dark" id="close" style="text-align: center; align-items: center;">
+  <h2 class="slide__headline" style="max-width: none; font-size: clamp(48px, 7vw, 84px);">
+    be so quiet.
+  </h2>
+  <p style="color: var(--besoq-color-stone); font-family: var(--besoq-font-serif); font-size: var(--besoq-font-size-md); margin-top: var(--besoq-space-6); max-width: 50ch; line-height: var(--besoq-line-height-editorial);">
+    We believe the most radical thing a brand can do today is shut up and make the garment well. So we shut up. And we make the garment well.
+  </p>
+  <p style="margin-top: var(--besoq-space-7); color: var(--besoq-color-stone); font-family: var(--besoq-font-mono); font-size: var(--besoq-font-size-xs); letter-spacing: var(--besoq-letter-spacing-caps);">
+    — besoq
+  </p>
+  <div style="margin-top: var(--besoq-space-9); color: var(--besoq-color-stone); font-family: var(--besoq-font-mono); font-size: var(--besoq-font-size-xs);">
+    <p>contact: [founder@besoq.com]</p>
+    <p style="margin-top: var(--besoq-space-2);">this document is confidential.</p>
+  </div>
+</section>
+
+<footer class="pitch-footer">
+  besoq · investor presentation · 2026 · confidential
+</footer>
+
+</body>
+</html>
