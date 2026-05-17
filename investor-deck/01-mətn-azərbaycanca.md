@@ -1,8 +1,8 @@
-# BESOQ — investor pitch deck
+# BESOQ — Investor Pitch Deck
 
-**14 slayd. Hər slaydın məzmunu, izahı, və qeydləri.**
+**14 slides. Full content for each slide with speaker notes.**
 
-> Bu sənəd PPTX-ə, Canva-ya, Google Slides-ə, və ya Reveal.js-ə kopyalanmaq üçündür. Real rəqəmləri öz məlumatınla əvəz et. Yer tutucular `[BURAYA YAZ]` kimi göstərilib.
+> Copy this into PowerPoint, Canva, Google Slides, or use the Marp/Reveal.js versions in this folder. Replace all `[PLACEHOLDER]` fields with your real data before any investor meeting.
 
 ---
 
