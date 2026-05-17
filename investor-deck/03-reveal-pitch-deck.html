@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="az">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,656 +10,306 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap">
 
   <style>
-    /* ─── BESOQ pitch tema ─── */
-
     :root {
-      --bone:      #F4EFE6;
-      --ash:       #1A1A1A;
-      --stone:     #A89B8C;
-      --charcoal:  #3C3C3C;
-      --linen:     #E4DDCE;
+      --bone: #F4EFE6;
+      --ash: #1A1A1A;
+      --stone: #A89B8C;
+      --charcoal: #3C3C3C;
+      --linen: #E4DDCE;
     }
-
-    .reveal {
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 24px;
-      color: var(--charcoal);
-      background: var(--bone);
-    }
-
-    body {
-      background: var(--bone);
-    }
-
-    .reveal .slides {
-      text-align: left;
-    }
-
-    .reveal .slides > section {
-      padding: 60px 80px;
-      height: 100%;
-      box-sizing: border-box;
-    }
-
-    .reveal h1, .reveal h2, .reveal h3 {
-      font-family: 'Inter', sans-serif;
-      color: var(--ash);
-      font-weight: 400;
-      letter-spacing: 0;
-      text-transform: none;
-      margin-bottom: 24px;
-      line-height: 1.15;
-    }
-
-    .reveal h1 { font-size: 56px; font-weight: 400; }
-    .reveal h2 { font-size: 40px; font-weight: 400; }
+    body { background: var(--bone); }
+    .reveal { font-family: 'Inter', -apple-system, sans-serif; font-size: 24px; color: var(--charcoal); background: var(--bone); }
+    .reveal .slides { text-align: left; }
+    .reveal .slides > section { padding: 60px 80px; height: 100%; box-sizing: border-box; }
+    .reveal h1, .reveal h2, .reveal h3 { font-family: 'Inter', sans-serif; color: var(--ash); font-weight: 400; letter-spacing: 0; text-transform: none; margin-bottom: 24px; line-height: 1.15; }
+    .reveal h1 { font-size: 56px; }
+    .reveal h2 { font-size: 40px; }
     .reveal h3 { font-size: 26px; font-weight: 600; margin-top: 32px; }
-
-    .reveal p, .reveal li {
-      font-size: 22px;
-      line-height: 1.55;
-      color: var(--charcoal);
-    }
-
-    .reveal strong {
-      color: var(--ash);
-      font-weight: 600;
-    }
-
-    .reveal ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .reveal ul li {
-      padding-left: 24px;
-      position: relative;
-      margin-bottom: 12px;
-    }
-
-    .reveal ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--stone);
-    }
-
-    .reveal table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 24px;
-      font-size: 18px;
-    }
-
-    .reveal table th,
-    .reveal table td {
-      border-bottom: 1px solid var(--stone);
-      padding: 12px 20px;
-      text-align: left;
-    }
-
-    .reveal table th {
-      font-weight: 600;
-      color: var(--ash);
-      background: transparent;
-    }
-
-    .reveal table td {
-      color: var(--charcoal);
-    }
-
-    /* ─── Cover slide ─── */
-    .cover {
-      display: flex !important;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .cover .wordmark {
-      font-size: 96px;
-      letter-spacing: 0.12em;
-      font-weight: 400;
-      color: var(--ash);
-      margin-bottom: 16px;
-      line-height: 1;
-    }
-
-    .cover .tagline {
-      font-size: 24px;
-      color: var(--charcoal);
-      margin-bottom: 80px;
-    }
-
-    .cover h1 {
-      font-size: 48px;
-      max-width: 80%;
-      margin-bottom: 60px;
-    }
-
-    .cover .meta {
-      font-size: 14px;
-      color: var(--stone);
-      letter-spacing: 0.05em;
-    }
-
-    /* ─── Dark slide variant ─── */
-    .dark {
-      background: var(--ash);
-    }
-    .dark h1, .dark h2, .dark h3, .dark strong {
-      color: var(--bone);
-    }
-    .dark p, .dark li {
-      color: var(--linen);
-    }
+    .reveal p, .reveal li { font-size: 22px; line-height: 1.55; color: var(--charcoal); }
+    .reveal strong { color: var(--ash); font-weight: 600; }
+    .reveal ul { list-style: none; padding-left: 0; }
+    .reveal ul li { padding-left: 24px; position: relative; margin-bottom: 12px; }
+    .reveal ul li::before { content: '\2014'; position: absolute; left: 0; color: var(--stone); }
+    .reveal table { border-collapse: collapse; width: 100%; margin-top: 24px; font-size: 18px; }
+    .reveal table th, .reveal table td { border-bottom: 1px solid var(--stone); padding: 12px 20px; text-align: left; }
+    .reveal table th { font-weight: 600; color: var(--ash); }
+    .cover { display: flex !important; flex-direction: column; justify-content: center; align-items: flex-start; }
+    .cover .wordmark { font-size: 96px; letter-spacing: 0.12em; font-weight: 400; color: var(--ash); margin-bottom: 16px; line-height: 1; }
+    .cover .tagline { font-size: 24px; color: var(--charcoal); margin-bottom: 80px; }
+    .cover h1 { font-size: 48px; max-width: 80%; margin-bottom: 60px; }
+    .cover .meta { font-size: 14px; color: var(--stone); letter-spacing: 0.05em; }
+    .dark { background: var(--ash); }
+    .dark h1, .dark h2, .dark h3, .dark strong { color: var(--bone); }
+    .dark p, .dark li { color: var(--linen); }
     .dark table th { color: var(--bone); }
     .dark table td { color: var(--linen); }
-    .dark table th, .dark table td {
-      border-bottom-color: var(--charcoal);
-    }
-    .dark ul li::before {
-      color: var(--stone);
-    }
-
-    /* ─── Center variant ─── */
-    .center {
-      display: flex !important;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center !important;
-    }
-    .center * {
-      text-align: center !important;
-    }
-
-    /* ─── Big quote slide ─── */
-    .big-quote h1 {
-      font-size: 64px;
-      max-width: 1000px;
-      line-height: 1.2;
-    }
-
-    /* ─── Eyebrow (kiçik üst etiket) ─── */
-    .eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      color: var(--stone);
-      text-transform: lowercase;
-      margin-bottom: 32px;
-    }
-
-    /* ─── Iki sütun ─── */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      margin-top: 32px;
-    }
-
-    /* ─── Üç sütun ─── */
-    .three-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 32px;
-      margin-top: 32px;
-    }
-
-    .three-col h3 {
-      margin-top: 0;
-      font-size: 22px;
-    }
-
-    .three-col p {
-      font-size: 18px;
-    }
-
-    /* ─── Footer wordmark ─── */
-    .slide-footer {
-      position: absolute;
-      bottom: 30px;
-      left: 80px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      color: var(--stone);
-    }
-
-    /* ─── Big number ─── */
-    .big-num {
-      font-size: 96px;
-      font-weight: 400;
-      color: var(--ash);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .stat-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 48px;
-      margin-top: 48px;
-    }
-
-    .stat-grid .num {
-      font-size: 56px;
-      font-weight: 400;
-      color: var(--ash);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .stat-grid .label {
-      font-size: 16px;
-      color: var(--charcoal);
-      line-height: 1.4;
-    }
-
-    /* ─── Page number ─── */
-    .reveal .progress {
-      color: var(--ash);
-    }
-
-    /* ─── Print rules ─── */
-    @media print {
-      .reveal .slides > section {
-        padding: 40px 60px;
-      }
-    }
+    .dark table th, .dark table td { border-bottom-color: var(--charcoal); }
+    .dark ul li::before { color: var(--stone); }
+    .center { display: flex !important; flex-direction: column; justify-content: center; align-items: center; text-align: center !important; }
+    .center * { text-align: center !important; }
+    .big-quote h1 { font-size: 64px; max-width: 1000px; line-height: 1.2; }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.05em; color: var(--stone); text-transform: lowercase; margin-bottom: 32px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 32px; }
+    .three-col h3 { margin-top: 0; font-size: 22px; }
+    .three-col p { font-size: 18px; }
+    .slide-footer { position: absolute; bottom: 30px; left: 80px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.05em; color: var(--stone); }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; margin-top: 48px; }
+    .stat-grid .num { font-size: 56px; font-weight: 400; color: var(--ash); line-height: 1; margin-bottom: 12px; }
+    .stat-grid .label { font-size: 16px; color: var(--charcoal); line-height: 1.4; }
   </style>
 </head>
-
 <body>
-
   <div class="reveal">
     <div class="slides">
 
-      <!-- ───────── SLAYD 01 — ÜZ QABIĞI ───────── -->
+      <!-- SLIDE 01 — COVER -->
       <section class="cover">
         <div class="wordmark">besoq</div>
         <div class="tagline">be so quiet.</div>
-        <h1>Azərbaycanda istehsal olunan,<br>22–32 yaş üçün geyim brendi.</h1>
-        <div class="meta">
-          investor təqdimatı · 2026<br>
-          [ad soyad] · [email]
-        </div>
+        <h1>A clothing brand manufactured in Azerbaijan<br>for the 22–32 age group.</h1>
+        <div class="meta">investor presentation — 2026<br>[Your Name] · [email]</div>
       </section>
 
-      <!-- ───────── SLAYD 02 — BÖYÜK SUAL ───────── -->
+      <!-- SLIDE 02 — BIG QUESTION -->
       <section class="center dark big-quote">
-        <h1>Bakıda 22–32 yaş gənc<br>gündəlik geyim üçün hara gedir?</h1>
+        <h1>Where does a 22–32 year old<br>in Baku go for everyday clothing?</h1>
       </section>
 
-      <!-- ───────── SLAYD 03 — PROBLEM ───────── -->
+      <!-- SLIDE 03 — PROBLEM -->
       <section>
         <div class="eyebrow">01 — problem</div>
-        <h2>Bazar dörd seçimə bölünüb. Hər birinin problemi var.</h2>
-
+        <h2>The market is split into four options.<br>Each one has a clear weakness.</h2>
         <div class="two-col" style="margin-top: 40px;">
           <div>
             <h3>LC Waikiki, DeFacto, Koton</h3>
-            <p>Qiymət OK. Amma hamıda eyni şey, dizayn yox.</p>
-
+            <p>Affordable, but zero design. Everyone wears the same thing.</p>
             <h3>Zara, Pull & Bear, Bershka</h3>
-            <p>Dizayn yaxşıdır. Amma qiymət baha, hər ay yeni trend.</p>
+            <p>Good design, but expensive. New trends every month.</p>
           </div>
           <div>
-            <h3>Trendyol və Türkiyə brendləri</h3>
-            <p>Qiymət düz. Amma 7–14 gün gözləmək, geri qaytarmaq problem.</p>
-
-            <h3>Yerli Instagram brendləri</h3>
-            <p>Kiçik komandalar. Sürət yox, brending zəif.</p>
+            <h3>Trendyol & Turkish brands</h3>
+            <p>Decent value, but 7–14 day delivery. Returns are painful.</p>
+            <h3>Local Instagram brands</h3>
+            <p>Small teams. No scale, no speed, weak branding.</p>
           </div>
         </div>
-
-        <p style="margin-top: 40px;"><strong>Arada boşluq var.</strong></p>
-        <div class="slide-footer">besoq · investor pitch · 03 / 14</div>
+        <p style="margin-top: 40px;"><strong>There is a gap in the market.</strong></p>
       </section>
 
-      <!-- ───────── SLAYD 04 — HƏLL ───────── -->
+      <!-- SLIDE 04 — SOLUTION -->
       <section class="center">
         <div class="wordmark" style="font-size: 88px; letter-spacing: 0.12em; color: var(--ash); margin-bottom: 24px;">besoq</div>
-        <p style="font-size: 32px; color: var(--ash); margin-bottom: 60px;">ağıllı dizayn + ağlabatan qiymət<br>+ Azərbaycanda istehsal + 24 saat</p>
-        <p style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--charcoal); letter-spacing: 0.05em;">
-          t-shirt 45 ₼ · hoodie 120 ₼ · jogger 80 ₼
-        </p>
+        <p style="font-size: 32px; color: var(--ash); margin-bottom: 60px;">smart design + fair price<br>+ made in Azerbaijan + 24-hour production</p>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--charcoal); letter-spacing: 0.05em;">t-shirt 45 &#8380; · hoodie 120 &#8380; · jogger 80 &#8380;</p>
       </section>
 
-      <!-- ───────── SLAYD 05 — NİYƏ İNDİ ───────── -->
+      <!-- SLIDE 05 — WHY NOW -->
       <section>
-        <div class="eyebrow">02 — niyə indi</div>
-        <h2>Bazar hazırdır. Hər il artır.</h2>
-
+        <div class="eyebrow">02 — why now</div>
+        <h2>The market is ready. Growing every year.</h2>
         <div class="stat-grid">
-          <div>
-            <div class="num">3×</div>
-            <div class="label">2022→2025 onlayn geyim alış-verişi artımı (Azərbaycan)</div>
-          </div>
-          <div>
-            <div class="num">65%</div>
-            <div class="label">22–32 yaş kateqoriyasının onlayn alıcılar arasında payı</div>
-          </div>
-          <div>
-            <div class="num">+40%</div>
-            <div class="label">"Made in Azerbaijan" mesajının yerli brendlərə təsiri (2024–25)</div>
-          </div>
+          <div><div class="num">3&times;</div><div class="label">Growth in online clothing purchases in Azerbaijan, 2022 &rarr; 2025</div></div>
+          <div><div class="num">65%</div><div class="label">Share of 22–32 age group among online buyers</div></div>
+          <div><div class="num">+40%</div><div class="label">Sales lift for brands using "Made in Azerbaijan" messaging</div></div>
         </div>
-
-        <p style="margin-top: 60px;"><strong>İnvestor üçün məna:</strong> tələb var, cəlb etmək asandır, brendin yeri açıqdır.</p>
-        <div class="slide-footer">besoq · investor pitch · 05 / 14</div>
+        <p style="margin-top: 60px;"><strong>Demand exists. Customer acquisition is affordable. The position is open.</strong></p>
       </section>
 
-      <!-- ───────── SLAYD 06 — HƏDƏF MÜŞTƏRİ ───────── -->
+      <!-- SLIDE 06 — TARGET CUSTOMER -->
       <section>
-        <div class="eyebrow">03 — hədəf müştəri</div>
-        <h2>Aytac, 26 yaş</h2>
-
+        <div class="eyebrow">03 — target customer</div>
+        <h2>Meet Aytaj, 26.</h2>
         <div class="two-col">
           <div>
             <ul>
-              <li>Marketinq menecer, ayda 1500 ₼</li>
-              <li>Bakıda yaşayır, kirayədə</li>
-              <li>Instagram-da 800+ followers</li>
-              <li>LC Waikiki-dən bezib</li>
-              <li>Zara qiymətini bahalı tapır</li>
-              <li>Trendyol-dan sifariş edir, amma 10 gün gözləmir</li>
-              <li>Yerli brendi sevər — keyfiyyət olsa</li>
+              <li>Marketing manager, 1,500 &#8380;/month</li>
+              <li>Lives in Baku, rents an apartment</li>
+              <li>Active on Instagram, 800+ followers</li>
+              <li>Outgrown LC Waikiki — wants better design</li>
+              <li>Finds Zara overpriced for basics</li>
+              <li>Orders from Trendyol, hates the 10-day wait</li>
+              <li>Will support a local brand if quality is there</li>
             </ul>
           </div>
           <div>
-            <h3>Bazar həcmi</h3>
+            <h3>Market size</h3>
             <table>
-              <thead>
-                <tr><th>Segment</th><th>Sayı</th></tr>
-              </thead>
+              <thead><tr><th>Layer</th><th>Size</th></tr></thead>
               <tbody>
-                <tr><td>TAM (geniş)</td><td>~400,000</td></tr>
-                <tr><td>SAM (real)</td><td>~250,000</td></tr>
-                <tr><td>SOM (il 1)</td><td>~5,000</td></tr>
+                <tr><td>TAM</td><td>~400,000</td></tr>
+                <tr><td>SAM</td><td>~250,000</td></tr>
+                <tr><td>SOM (year 1)</td><td>~5,000</td></tr>
               </tbody>
             </table>
-            <p style="margin-top: 24px; font-size: 16px; color: var(--stone);">İl 1 hədəfi: əldə edilə bilən bazarın 2%-i</p>
           </div>
         </div>
-        <div class="slide-footer">besoq · investor pitch · 06 / 14</div>
       </section>
 
-      <!-- ───────── SLAYD 07 — MƏHSUL ───────── -->
+      <!-- SLIDE 07 — PRODUCT -->
       <section>
-        <div class="eyebrow">04 — məhsul</div>
-        <h2>Daimi xətt + drop sistemi</h2>
-
+        <div class="eyebrow">04 — product</div>
+        <h2>One category, two systems.</h2>
         <div class="two-col">
           <div>
-            <h3>Daimi xətt — həmişə var</h3>
+            <h3>Permanent Line — always available</h3>
             <table>
-              <thead>
-                <tr><th>məhsul</th><th>qiymət</th></tr>
-              </thead>
+              <thead><tr><th>Product</th><th>Price</th></tr></thead>
               <tbody>
-                <tr><td>t-shirt</td><td>45 ₼</td></tr>
-                <tr><td>hoodie</td><td>120 ₼</td></tr>
-                <tr><td>jogger</td><td>80 ₼</td></tr>
-                <tr><td>set (hoodie+jogger)</td><td>180 ₼</td></tr>
+                <tr><td>t-shirt</td><td>45 &#8380;</td></tr>
+                <tr><td>hoodie</td><td>120 &#8380;</td></tr>
+                <tr><td>jogger</td><td>80 &#8380;</td></tr>
+                <tr><td>set (hoodie+jogger)</td><td>180 &#8380;</td></tr>
               </tbody>
             </table>
           </div>
           <div>
-            <h3>Drop sistemi</h3>
-            <p>Ayda bir dəfə 3–4 yeni model. Yeni rəng, yeni print, limitli sayda.</p>
-            <p>Bitdi — geri qayıtmır. Hər ay müştəriyə geri qayıtmaq üçün bir səbəb.</p>
-            <p style="font-size: 18px; color: var(--stone); margin-top: 32px;">stok riski sıfır · marketinq dövriyyəsi yaradır · uzunömürlü brend</p>
+            <h3>Drop System — monthly releases</h3>
+            <p>3–4 new items each month. New color, new print, limited quantity. Gone when it's gone.</p>
+            <p style="font-size: 18px; color: var(--stone); margin-top: 32px;">zero inventory risk · natural marketing cycle · repeat customers</p>
           </div>
         </div>
-        <div class="slide-footer">besoq · investor pitch · 07 / 14</div>
       </section>
 
-      <!-- ───────── SLAYD 08 — BİZ NİYƏ FƏRQLİYİK ───────── -->
+      <!-- SLIDE 08 — COMPETITIVE ADVANTAGES -->
       <section>
-        <div class="eyebrow">05 — niyə BESOQ</div>
-        <h2>Beş üstünlük</h2>
-
+        <div class="eyebrow">05 — why besoq wins</div>
+        <h2>Five advantages.</h2>
         <div class="three-col">
-          <div>
-            <h3>1. Sürət</h3>
-            <p>Sifariş bu gün → paket sabah. Heç bir Azərbaycan brendi bunu deyə bilmir.</p>
-          </div>
-          <div>
-            <h3>2. Yerli istehsal</h3>
-            <p>Bakıda partnyor, bütün print texnologiyaları, gündə 50+ ədəd.</p>
-          </div>
-          <div>
-            <h3>3. Print-on-demand</h3>
-            <p>Anbar yox, stok riski sıfır. Kapital tələbini 10x azaldır.</p>
-          </div>
+          <div><h3>1. Speed</h3><p>Order today, package tomorrow. Nobody else in Azerbaijan can do this.</p></div>
+          <div><h3>2. Local production</h3><p>Large Baku facility. All print technologies. 50+ units/day. 3+ year partnership.</p></div>
+          <div><h3>3. Print-on-demand</h3><p>No warehouse. No dead stock. Capital requirement reduced 10&times;.</p></div>
         </div>
-
         <div class="three-col" style="margin-top: 32px;">
-          <div>
-            <h3>4. Brend mövqeyi</h3>
-            <p>"Be So Quiet" — sakit, az logo. Bakıda heç kim yoxdur burada.</p>
-          </div>
-          <div>
-            <h3>5. Hazır brand kit</h3>
-            <p>Strategiya, ton, vizual tam yazılıb. GitHub-da açıq.</p>
-          </div>
+          <div><h3>4. Brand position</h3><p>"Be So Quiet" — minimal, quiet. An empty space on the map.</p></div>
+          <div><h3>5. System is built</h3><p>Full brand kit, strategy, tokens, visual system — documented.</p></div>
           <div></div>
         </div>
-        <div class="slide-footer">besoq · investor pitch · 08 / 14</div>
       </section>
 
-      <!-- ───────── SLAYD 09 — BIZNES MODELİ ───────── -->
+      <!-- SLIDE 09 — BUSINESS MODEL -->
       <section>
-        <div class="eyebrow">06 — biznes modeli</div>
-        <h2>Print-on-demand, yüksək marja</h2>
-
+        <div class="eyebrow">06 — business model</div>
+        <h2>Print-on-demand. High margins.</h2>
         <table style="margin-top: 32px;">
-          <thead>
-            <tr>
-              <th>məhsul</th>
-              <th>maya</th>
-              <th>satış</th>
-              <th>marja</th>
-              <th>marja %</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Product</th><th>Cost</th><th>Sells for</th><th>Margin</th><th>%</th></tr></thead>
           <tbody>
-            <tr><td>t-shirt</td><td>~16 ₼</td><td>45 ₼</td><td>29 ₼</td><td>64%</td></tr>
-            <tr><td>hoodie</td><td>~22 ₼</td><td>120 ₼</td><td>98 ₼</td><td>82%</td></tr>
-            <tr><td>jogger</td><td>~20 ₼</td><td>80 ₼</td><td>60 ₼</td><td>75%</td></tr>
-            <tr><td>set</td><td>~42 ₼</td><td>180 ₼</td><td>138 ₼</td><td>77%</td></tr>
+            <tr><td>t-shirt</td><td>~16 &#8380;</td><td>45 &#8380;</td><td>29 &#8380;</td><td>64%</td></tr>
+            <tr><td>hoodie</td><td>~22 &#8380;</td><td>120 &#8380;</td><td>98 &#8380;</td><td>82%</td></tr>
+            <tr><td>jogger</td><td>~20 &#8380;</td><td>80 &#8380;</td><td>60 &#8380;</td><td>75%</td></tr>
+            <tr><td>set</td><td>~42 &#8380;</td><td>180 &#8380;</td><td>138 &#8380;</td><td>77%</td></tr>
           </tbody>
         </table>
-
-        <p style="margin-top: 32px;"><strong>Bütün xərclərdən sonra orta marja: 40–55%</strong></p>
-        <p style="font-size: 16px; color: var(--stone);">çatdırılma · qablaşdırma · marketinq · geri qaytarma daxil</p>
-        <div class="slide-footer">besoq · investor pitch · 09 / 14</div>
+        <p style="margin-top: 32px;"><strong>Net margin after all expenses: 40–55%</strong></p>
       </section>
 
-      <!-- ───────── SLAYD 10 — YOL XƏRİTƏSİ ───────── -->
+      <!-- SLIDE 10 — ROADMAP -->
       <section>
-        <div class="eyebrow">07 — yol xəritəsi</div>
-        <h2>12 ay ərzində</h2>
-
+        <div class="eyebrow">07 — roadmap</div>
+        <h2>12 months.</h2>
         <div class="two-col">
           <div>
-            <h3>Q1 — yan/mar</h3>
-            <ul>
-              <li>sayt qoyulur</li>
-              <li>drop 01 çıxış</li>
-              <li>ilk 50 sifariş</li>
-            </ul>
-
-            <h3>Q2 — apr/iyn</h3>
-            <ul>
-              <li>4 drop</li>
-              <li>5K Instagram</li>
-              <li>aylıq 100+ sifariş</li>
-            </ul>
+            <h3>Q1 — Jan/Mar</h3>
+            <ul><li>Website launches</li><li>Drop 01 releases</li><li>First 50 orders</li></ul>
+            <h3>Q2 — Apr/Jun</h3>
+            <ul><li>4 drops executed</li><li>5K Instagram followers</li><li>100+ monthly orders</li></ul>
           </div>
           <div>
-            <h3>Q3 — iyl/sen</h3>
-            <ul>
-              <li>aylıq 250+ sifariş</li>
-              <li>regional çatdırılma</li>
-              <li>ilk influencer</li>
-            </ul>
-
-            <h3>Q4 — okt/dek</h3>
-            <ul>
-              <li>aylıq 500+ sifariş</li>
-              <li>komanda 3 nəfər</li>
-              <li>B2B açılışı</li>
-              <li>Türkiyə testi</li>
-            </ul>
+            <h3>Q3 — Jul/Sep</h3>
+            <ul><li>250+ monthly orders</li><li>Regional delivery</li><li>First influencer collab</li></ul>
+            <h3>Q4 — Oct/Dec</h3>
+            <ul><li>500+ monthly orders</li><li>Team of 3</li><li>B2B channel opens</li><li>Turkey market test</li></ul>
           </div>
         </div>
-
-        <p style="margin-top: 40px;"><strong>12 ay sonra:</strong> aylıq 5,000–8,000 sifariş, 15K+ Instagram, profitabel.</p>
-        <div class="slide-footer">besoq · investor pitch · 10 / 14</div>
+        <p style="margin-top: 40px;"><strong>12-month target:</strong> 5,000–8,000 monthly orders. Profitable.</p>
       </section>
 
-      <!-- ───────── SLAYD 11 — MARKETİNQ ───────── -->
+      <!-- SLIDE 11 — MARKETING -->
       <section>
-        <div class="eyebrow">08 — marketinq</div>
-        <h2>Kontent və partnyorluq, reklam pulu yox</h2>
-
+        <div class="eyebrow">08 — marketing</div>
+        <h2>Content and partnerships, not ad spend.</h2>
         <div class="three-col">
-          <div>
-            <h3>Instagram (90%)</h3>
-            <p>həftədə 3–4 post · aylıq 4 reels · drop xəbərləri · hashtag yox</p>
-          </div>
-          <div>
-            <h3>Mikro-influencer (Q2-dən)</h3>
-            <p>5K–20K followers · pul yox, geyim hədiyyə · dəyər uyğunluğu</p>
-          </div>
-          <div>
-            <h3>TikTok (Q3-dən)</h3>
-            <p>qısa, sakit kontent · "Made in Azerbaijan" hekayələri</p>
-          </div>
+          <div><h3>Instagram (90%)</h3><p>3–4 posts/week. 4 reels/month. Drop announcements. Zero hashtags.</p></div>
+          <div><h3>Micro-influencers</h3><p>5K–20K followers. Product gifting, no cash. Brand value alignment.</p></div>
+          <div><h3>TikTok (from Q3)</h3><p>Short, quiet content. "Made in Azerbaijan" storytelling.</p></div>
         </div>
-
-        <h3 style="margin-top: 48px;">Reklam büdcəsi</h3>
-        <p>İlk 6 ay: aylıq 200–500 ₼ · 7-12 ay: aylıq 800–1500 ₼</p>
-        <p style="color: var(--stone); font-size: 18px;">Brend orqanik böyüyür. Reklam əsas dövriyyə deyil.</p>
-        <div class="slide-footer">besoq · investor pitch · 11 / 14</div>
+        <h3 style="margin-top: 48px;">Budget</h3>
+        <p>Months 1–6: 200–500 &#8380;/month &middot; Months 7–12: 800–1,500 &#8380;/month</p>
       </section>
 
-      <!-- ───────── SLAYD 12 — KOMANDA ───────── -->
+      <!-- SLIDE 12 — TEAM -->
       <section>
-        <div class="eyebrow">09 — komanda</div>
-        <h2>Qurucu və partnyorlar</h2>
-
+        <div class="eyebrow">09 — team</div>
+        <h2>Founder + production partners.</h2>
         <div class="two-col">
           <div>
-            <h3>[Sənin adın] — qurucu</h3>
-            <ul>
-              <li>[təcrübən və təhsilin]</li>
-              <li>[daha əvvəlki layihələr]</li>
-              <li>brend, marketinq, strateji qərarlar</li>
-              <li>müştəri xidməti</li>
-            </ul>
+            <h3>[Your Name] — Founder</h3>
+            <ul><li>[Your background]</li><li>[Previous projects]</li><li>Brand, marketing, strategy</li></ul>
           </div>
           <div>
-            <h3>İstehsal partnyorları</h3>
-            <ul>
-              <li>Bakıda böyük istehsalat</li>
-              <li>3+ il işbirliyi təcrübəsi</li>
-              <li>bütün print texnologiyaları</li>
-              <li>gündəlik gücü 50+ ədəd</li>
-            </ul>
+            <h3>Production Partners</h3>
+            <ul><li>Large facility in Baku</li><li>3+ years working together</li><li>All print technologies</li><li>50+ units/day capacity</li></ul>
           </div>
         </div>
-
-        <h3 style="margin-top: 40px;">Gələcək işə alınmalar</h3>
-        <p>Q2: müştəri xidməti meneceri · Q3: vizual kontent yaradıcı · Q4: əməliyyat meneceri</p>
-        <div class="slide-footer">besoq · investor pitch · 12 / 14</div>
+        <p style="margin-top: 40px;"><strong>Planned hires:</strong> Q2 — customer service &middot; Q3 — content creator &middot; Q4 — operations</p>
       </section>
 
-      <!-- ───────── SLAYD 13 — MALİYYƏ ───────── -->
+      <!-- SLIDE 13 — FINANCIALS -->
       <section>
-        <div class="eyebrow">10 — maliyyə proqnozu</div>
-        <h2>İl 1 — aylıq inkişaf</h2>
-
+        <div class="eyebrow">10 — financials</div>
+        <h2>Year 1 growth trajectory.</h2>
         <table>
-          <thead>
-            <tr>
-              <th>ay</th>
-              <th>sifariş</th>
-              <th>orta çek</th>
-              <th>aylıq dövriyyə</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Month</th><th>Orders</th><th>Avg. check</th><th>Revenue</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>30</td><td>95 ₼</td><td>2,850 ₼</td></tr>
-            <tr><td>3</td><td>150</td><td>100 ₼</td><td>15,000 ₼</td></tr>
-            <tr><td>6</td><td>350</td><td>105 ₼</td><td>36,750 ₼</td></tr>
-            <tr><td>9</td><td>700</td><td>110 ₼</td><td>77,000 ₼</td></tr>
-            <tr><td>12</td><td>1,200</td><td>115 ₼</td><td>138,000 ₼</td></tr>
+            <tr><td>1</td><td>30</td><td>95 &#8380;</td><td>2,850 &#8380;</td></tr>
+            <tr><td>3</td><td>150</td><td>100 &#8380;</td><td>15,000 &#8380;</td></tr>
+            <tr><td>6</td><td>350</td><td>105 &#8380;</td><td>36,750 &#8380;</td></tr>
+            <tr><td>9</td><td>700</td><td>110 &#8380;</td><td>77,000 &#8380;</td></tr>
+            <tr><td>12</td><td>1,200</td><td>115 &#8380;</td><td>138,000 &#8380;</td></tr>
           </tbody>
         </table>
-
         <div class="stat-grid" style="margin-top: 40px;">
-          <div>
-            <div class="num">~600K ₼</div>
-            <div class="label">il 1 dövriyyəsi</div>
-          </div>
-          <div>
-            <div class="num">~265K ₼</div>
-            <div class="label">il 1 EBITDA</div>
-          </div>
-          <div>
-            <div class="num">~44%</div>
-            <div class="label">EBITDA marjası</div>
-          </div>
+          <div><div class="num">~600K</div><div class="label">Year 1 revenue (&#8380;)</div></div>
+          <div><div class="num">~265K</div><div class="label">Year 1 EBITDA (&#8380;)</div></div>
+          <div><div class="num">~44%</div><div class="label">EBITDA margin</div></div>
         </div>
-        <div class="slide-footer">besoq · investor pitch · 13 / 14</div>
       </section>
 
-      <!-- ───────── SLAYD 14 — İNVESTİSİYA TƏKLİFİ ───────── -->
+      <!-- SLIDE 14 — THE ASK -->
       <section class="dark">
-        <div class="eyebrow" style="color: var(--stone);">11 — təklif</div>
-        <h2>Lazımdır: [MƏBLƏĞ] ₼</h2>
-
+        <div class="eyebrow" style="color: var(--stone);">11 — the ask</div>
+        <h2>We need [AMOUNT] &#8380;</h2>
         <div class="two-col" style="margin-top: 32px;">
           <div>
-            <h3>Pulun istifadəsi</h3>
+            <h3>Use of funds</h3>
             <table>
               <tbody>
-                <tr><td>ilkin stok</td><td>25%</td></tr>
-                <tr><td>marketinq</td><td>35%</td></tr>
-                <tr><td>sayt və texnoloji</td><td>15%</td></tr>
-                <tr><td>foto və kontent</td><td>10%</td></tr>
-                <tr><td>operativ rezerv</td><td>15%</td></tr>
+                <tr><td>Initial blank stock</td><td>25%</td></tr>
+                <tr><td>Marketing</td><td>35%</td></tr>
+                <tr><td>Website & tech</td><td>15%</td></tr>
+                <tr><td>Photography & content</td><td>10%</td></tr>
+                <tr><td>Operating reserve</td><td>15%</td></tr>
               </tbody>
             </table>
           </div>
           <div>
-            <h3>Qarşılığında</h3>
+            <h3>In return</h3>
             <p>[Equity X% / Convertible note / Revenue share]</p>
-
-            <h3>Geri dönüş</h3>
-            <p>2 il: 2x · 4 il: 5x və ya çıxış</p>
+            <h3>Expected return</h3>
+            <p>2 years: 2&times; &middot; 4 years: 5&times; or exit</p>
           </div>
         </div>
-        <div class="slide-footer" style="color: var(--stone);">besoq · investor pitch · 14 / 14</div>
       </section>
 
-      <!-- ───────── SLAYD 15 — SON ───────── -->
+      <!-- SLIDE 15 — CLOSING -->
       <section class="center">
-        <h1 style="font-size: 56px; max-width: 900px;">bu doğru zaman, doğru məhsul,<br>doğru adamdır.</h1>
-        <p style="font-size: 26px; color: var(--charcoal); margin-top: 40px;">birlikdə bu yolu qura bilərikmi?</p>
-        <p style="margin-top: 80px; font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--stone);">
-          [ad soyad]<br>
-          [email] · [telefon]
-        </p>
+        <h1 style="font-size: 56px; max-width: 900px;">Right time. Right product.<br>Right person.</h1>
+        <p style="font-size: 26px; color: var(--charcoal); margin-top: 40px;">Can we build this together?</p>
+        <p style="margin-top: 80px; font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--stone);">[Your Name]<br>[email] · [phone]</p>
       </section>
 
     </div>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
   <script>
     Reveal.initialize({
